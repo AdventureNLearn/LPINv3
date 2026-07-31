@@ -74,7 +74,7 @@ Expect: assert passes; lab densify flag **not** present on default path.
 
 ### 4.2 Single window smoke
 
-1. `npm run dev` (product, port **8090** — do not touch Qwen **8080**)  
+1. `npm run dev` (product default **http://127.0.0.1:8090**)  
 2. Open `http://127.0.0.1:8090/jobsite`  
 3. Confirm `data-edition="desktop"` on shell (DevTools) when viewport ≥ desktop breakpoint / forced desktop  
 4. Switch views: Board → Report → Schedule → Map → Site  

@@ -1,7 +1,8 @@
 # LPIN Suite — Build Guidelines
 
 **Status:** ACTIVE (AdventureNLearn decisions D1–D7, 2026-07-31)  
-**Companion:** `PUBLIC_SURFACE_CONTRACT.md` · ops `C:\AOS\ops\HARD-RULES.md`
+**Companion:** `PUBLIC_SURFACE_CONTRACT.md` · `docs/PUBLIC-RELEASE.md`  
+**Operator host (optional):** AOS ops HARD-RULES on the control-plane machine — not required to fork or build this repo.
 
 These rules govern what may ship on a **public product path** vs what stays in **lab / research**. They protect industry users and regular Americans from lab-scale noise while preserving a defensible education and research track.
 

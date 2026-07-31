@@ -1,6 +1,6 @@
 /**
  * Public Surface Contract — runtime constants.
- * Full prose: /workspace/PUBLIC_SURFACE_CONTRACT.md
+ * Full prose: PUBLIC_SURFACE_CONTRACT.md (repo root)
  *
  * Skills complement; apps stay secular civic tooling.
  */
