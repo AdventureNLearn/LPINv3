@@ -1,0 +1,25 @@
+{
+  "name": "LPINv3 Mobile",
+  "short_name": "LPIN Mobile",
+  "description": "LPINv3 mobile Jobsite + Claims. Phone-first. Device-local.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060e16",
+  "theme_color": "#060e16",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/lpin/brand-icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/lpin/mark-lpin-sq.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
