@@ -7,7 +7,21 @@
 
 Skills **complement** these apps. They do **not** take over navigation, branding, or user-facing ideology. Public products stay **secular civic tooling**: verification honesty + field honesty only.
 
-## Layer split
+## Lab vs product (D1–D7)
+
+Full build rules: **[BUILD-GUIDELINES.md](./BUILD-GUIDELINES.md)**.
+
+| Layer | Owns | Must not own |
+|-------|------|----------------|
+| **Product path** | Shipable Claims + Jobsite (or any release brand under D2), plain English, human final call, small educational samples | Default **IX-15M / ~285k portfolio densify**, dual-Z thrash harness as product chrome, lab theater |
+| **Lab / research** | Private scale-testbed, chat-lab, optional `VITE_LPIN_LAB_SCALE=1` | Silent inclusion in public default builds |
+| **Operator skills** (as written) | Private design assist, audits | Shipping UI, speaking *through* the product to end users |
+
+**Hard rule (D1):** Production / public-default builds must **not** seed full 15‑minute interval field-log streams across the portfolio. User-authored logs of any length remain allowed.
+
+**Release authority (D2):** AdventureNLearn may publish under any name, repo, or channel at any time. Safety rules still constrain *content*, not brand or schedule.
+
+## Layer split (skills)
 
 | Layer | Owns | Must not own |
 |-------|------|----------------|
@@ -78,6 +92,9 @@ Operator skills may still use their own language **in SuperGrok private work**. 
 | Path | Role |
 |------|------|
 | `src/lib/integrity/` | Kernel types, harbor copy, public footer, framing checks |
+| `BUILD-GUIDELINES.md` | Lab vs product, densify ban, education packaging |
+| `src/lib/jobsite/release-mode.ts` | `VITE_LPIN_LAB_SCALE` gate |
+| `scripts/assert-public-build.mjs` | Blocks lab flag on default `npm run build` |
 | `src/components/integrity/` | Shared HarborRules / IntegrityNotice UI |
 | `src/lib/claimcard/domain.ts` | Tri-state + Layer-0 + secular export |
 | `src/lib/jobsite/domain.ts` | Visibility gap + readiness gate |

@@ -94,9 +94,13 @@ export function evaluateReadiness(jobsite: Jobsite): ReadinessStatus {
 
 export function createEmptyJobsite(identity?: Partial<ProjectIdentity>): Jobsite {
   const now = new Date().toISOString();
+  const id = newId("js");
+  const name = identity?.name?.trim() || "My jobsite";
+  const industry = identity?.industry ?? "commercial";
+  // Lazy import avoided — org attached when portfolio registers / user picks industry
   return {
-    id: newId("js"),
-    name: identity?.name?.trim() || "My jobsite",
+    id,
+    name,
     location: identity?.location?.trim() || "United States",
     cityState: identity?.cityState?.trim() || undefined,
     permitNumber: identity?.permitNumber?.trim() || "TBD",
@@ -107,7 +111,7 @@ export function createEmptyJobsite(identity?: Partial<ProjectIdentity>): Jobsite
     isDemo: false,
     captainName: identity?.captainName?.trim() || undefined,
     notes: identity?.notes?.trim() || undefined,
-    industry: identity?.industry,
+    industry,
     projectStartDate: identity?.projectStartDate,
     materialsBudget: identity?.materialsBudget,
     updatedAt: now,

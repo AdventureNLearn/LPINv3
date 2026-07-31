@@ -175,6 +175,27 @@ export function SiteMapPanel() {
           const m = mapRef.current;
           if (!m) return;
 
+          // Containers often measure 0 until after first paint / tab switch
+          try {
+            m.resize();
+            requestAnimationFrame(() => {
+              try {
+                m.resize();
+              } catch {
+                /* ignore */
+              }
+            });
+            window.setTimeout(() => {
+              try {
+                m.resize();
+              } catch {
+                /* ignore */
+              }
+            }, 250);
+          } catch {
+            /* ignore */
+          }
+
           m.addSource("lpin-pin", {
             type: "geojson",
             data: { type: "FeatureCollection", features: [] },
@@ -298,11 +319,17 @@ export function SiteMapPanel() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Sync store → map when siteGeo changes
+  // Sync store → map only when pin/layers actually change (not every new object ref)
+  const siteGeoKey = siteGeo
+    ? `${siteGeo.pin?.lat ?? ""},${siteGeo.pin?.lon ?? ""},${siteGeo.zoom ?? ""},${siteGeo.layers?.length ?? 0},${siteGeo.layers?.map((l) => l.id).join("|") ?? ""}`
+    : "";
+  const lastGeoKey = useRef("");
   useEffect(() => {
     if (!ready) return;
+    if (siteGeoKey === lastGeoKey.current) return;
+    lastGeoKey.current = siteGeoKey;
     applyMapData(siteGeo);
-  }, [siteGeo, ready, applyMapData]);
+  }, [siteGeo, siteGeoKey, ready, applyMapData]);
 
   const finishDraw = () => {
     if (drawPtsRef.current.length < 3) {
@@ -428,7 +455,7 @@ export function SiteMapPanel() {
       <div
         ref={containerRef}
         className={cn(
-          "relative h-64 w-full overflow-hidden rounded-xl border border-border bg-surface-1 sm:h-80",
+          "relative h-72 w-full overflow-hidden rounded-xl border border-border bg-surface-1 sm:h-[28rem]",
           mode === "pin" && "cursor-crosshair",
           mode === "draw" && "cursor-crosshair",
         )}

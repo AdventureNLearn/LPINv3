@@ -40,6 +40,7 @@ import { createDemoJobsite } from "./demo";
 import { parsePackJson } from "./pack";
 import { applyIndustryTemplate } from "./apply-template";
 import { normalizeSiteGeo } from "./site-geo";
+import { registerJobsiteInPortfolio } from "./portfolio-store";
 
 interface JobsiteState {
   jobsite: Jobsite;
@@ -245,6 +246,9 @@ function migrateJobsite(raw: unknown): Jobsite {
     projectStartDate: j.projectStartDate,
     materialsBudget: j.materialsBudget,
     siteGeo: normalizeSiteGeo(j.siteGeo),
+    org: j.org,
+    nationalVendors: j.nationalVendors,
+    fieldComms: j.fieldComms,
   };
 }
 
@@ -285,25 +289,31 @@ export const useJobsiteStore = create<JobsiteState>()(
           composeReportId: undefined,
         }),
 
-      startNewProject: (identity) =>
+      startNewProject: (identity) => {
+        const jobsite = touch(
+          createEmptyJobsite({
+            name: "My jobsite",
+            location: "United States",
+            permitNumber: "TBD",
+            permittingOffice: "City / County Building Department",
+            ...identity,
+            // Blank board never inherits demo state or a pre-picked state code
+            stateCode: identity?.stateCode,
+            cityState: identity?.cityState,
+          }),
+        );
         set({
-          // touch() guarantees materials/schedule arrays for every lane after blank
-          jobsite: touch(
-            createEmptyJobsite({
-              name: "My jobsite",
-              location: "United States",
-              permitNumber: "TBD",
-              permittingOffice: "City / County Building Department",
-              ...identity,
-              // Blank board never inherits demo state or a pre-picked state code
-              stateCode: identity?.stateCode,
-              cityState: identity?.cityState,
-            }),
-          ),
+          jobsite,
           view: "project",
           role: "field",
           composeReportId: undefined,
-        }),
+        });
+        try {
+          registerJobsiteInPortfolio(jobsite);
+        } catch {
+          /* portfolio optional at first paint */
+        }
+      },
 
       updateProject: (identity) => {
         const jobsite = get().jobsite;
@@ -321,23 +331,53 @@ export const useJobsiteStore = create<JobsiteState>()(
         });
       },
 
-      importJobsite: (jobsite) =>
+      importJobsite: (jobsite) => {
+        // Soft load for project switches — do NOT bump updatedAt (avoids save/sync bounce)
+        const cur = get().jobsite;
+        if (cur?.id === jobsite.id && cur.updatedAt === jobsite.updatedAt) {
+          return;
+        }
+        const next: Jobsite = {
+          ...jobsite,
+          country: "US",
+          isDemo: jobsite.isDemo === true,
+          contacts: jobsite.contacts ?? [],
+          schedule: jobsite.schedule ?? [],
+          materials: jobsite.materials ?? [],
+          dailyLogs: jobsite.dailyLogs ?? [],
+          punchList: jobsite.punchList ?? [],
+          changeOrders: jobsite.changeOrders ?? [],
+          siteGeo: normalizeSiteGeo(jobsite.siteGeo),
+          // keep original updatedAt from portfolio/pack
+          updatedAt: jobsite.updatedAt || cur?.updatedAt || new Date().toISOString(),
+        };
         set({
-          jobsite: touch({
-            ...jobsite,
-            isDemo: false,
-            country: "US",
-            contacts: jobsite.contacts ?? [],
-            schedule: jobsite.schedule ?? [],
-          }),
-          view: "feed",
+          jobsite: next,
+          view: get().view || "feed",
           composeReportId: undefined,
-        }),
+        });
+      },
 
       importPackText: (raw) => {
         const parsed = parsePackJson(raw);
         if (!parsed.ok) return parsed;
-        get().importJobsite(parsed.jobsite);
+        const jobsite = touch({
+          ...parsed.jobsite,
+          isDemo: false,
+          country: "US",
+          contacts: parsed.jobsite.contacts ?? [],
+          schedule: parsed.jobsite.schedule ?? [],
+        });
+        set({
+          jobsite,
+          view: "feed",
+          composeReportId: undefined,
+        });
+        try {
+          registerJobsiteInPortfolio(jobsite);
+        } catch {
+          /* ignore */
+        }
         return { ok: true as const };
       },
 
@@ -1038,6 +1078,7 @@ export const useJobsiteStore = create<JobsiteState>()(
           "inspections",
           "desk",
           "project",
+          "map",
           "schedule",
           "contacts",
           "materials",
