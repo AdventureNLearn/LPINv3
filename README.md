@@ -28,12 +28,15 @@ npm run opsec:check
 
 ```bash
 npm ci
-npm run dev          # 0.0.0.0:8080
+npm run dev          # http://127.0.0.1:8090
 npm run typecheck
 npm run build
-npm run opsec:check
-npm run qa           # Playwright E2E (dev server must be up)
+npm run audit:public # OPSEC + densify guard + typecheck + build (pre-publish)
+npm run qa           # Playwright E2E (dev server must be up; LPIN_BASE_URL optional)
 ```
+
+Forkable public releases: see **[docs/PUBLIC-RELEASE.md](./docs/PUBLIC-RELEASE.md)**.  
+Lab densify (`npm run dev:lab`) is research-only — never the public default (D1).
 
 ## Credits
 

@@ -8,7 +8,7 @@
 export type TriStateScore = -1 | 0 | 1;
 
 /**
- * What a score rests on (evidence-gate mechanism, plain labels).
+ * What a score rests on (basis-kind mechanism, plain labels).
  * - evidence: direct primary record or direct observation
  * - inference: conclusion drawn from evidence (must note reasoning)
  * - assumption: unverified premise — must stay visible

@@ -54,3 +54,8 @@ startup.sh
 archives/
 attachments/
 screenshots/
+
+# Lab / research only — not part of forkable public product (D1, geo OPSEC)
+docs/test-runs/
+src/lib/jobsite/project-catalog.lab.ts
+.env.lab

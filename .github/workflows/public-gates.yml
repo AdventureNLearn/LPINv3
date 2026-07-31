@@ -1,0 +1,23 @@
+name: public-gates
+
+on:
+  push:
+    branches: [main, release/**]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Public audit (OPSEC + densify + typecheck + build)
+        run: npm run audit:public
+        env:
+          # Never densify on CI product path
+          VITE_LPIN_LAB_SCALE: ""

@@ -2,7 +2,7 @@
 /**
  * LPIN Suite full E2E (Playwright).
  *
- * Prerequisites: app reachable at BASE (default http://127.0.0.1:8080).
+ * Prerequisites: app reachable at BASE (default http://127.0.0.1:8090).
  *   npm run dev   # in another terminal, or already up
  *   npm run qa
  *
@@ -14,8 +14,9 @@ import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
-const BASE = (process.env.LPIN_BASE_URL || "http://127.0.0.1:8080").replace(/\/$/, "");
-const SHOT_DIR = process.env.LPIN_QA_SHOTS || "/workspace/screenshots";
+const BASE = (process.env.LPIN_BASE_URL || "http://127.0.0.1:8090").replace(/\/$/, "");
+const SHOT_DIR =
+  process.env.LPIN_QA_SHOTS || join(process.cwd(), "screenshots");
 const TIMEOUT = Number(process.env.LPIN_QA_TIMEOUT_MS || 45000);
 
 mkdirSync(SHOT_DIR, { recursive: true });

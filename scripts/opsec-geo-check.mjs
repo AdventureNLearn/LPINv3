@@ -8,7 +8,17 @@ import { join } from "node:path";
 
 const ROOT = process.cwd();
 const ROOTS = ["src", "public", "scripts"];
-const SKIP = new Set(["package-lock.json", "opsec-geo-check.mjs"]);
+/** Tooling / lab snapshots that intentionally list denylist tokens for scrubbing. */
+const SKIP = new Set([
+  "package-lock.json",
+  "opsec-geo-check.mjs",
+  "opsec-portable-check.mjs",
+  "opsec-secrets-check.mjs",
+  "opsec-surface-check.mjs",
+  "scrub-catalog-opsec.mjs",
+  "project-catalog.lab.ts",
+  "_list-catalog-cities.mjs",
+]);
 
 // Real places / agencies tied to a city. State names (Florida, Texas) are allowed.
 const FORBIDDEN = [

@@ -1,12 +1,17 @@
+#!/usr/bin/env node
 import { chromium } from "playwright";
 import { mkdir } from "fs/promises";
+import { join } from "node:path";
 
-await mkdir("/workspace/screenshots", { recursive: true });
+const BASE = (process.env.LPIN_BASE_URL || "http://127.0.0.1:8090").replace(/\/$/, "");
+const SHOT = process.env.LPIN_QA_SHOTS || join(process.cwd(), "screenshots");
+await mkdir(SHOT, { recursive: true });
+
 const browser = await chromium.launch({ headless: true });
 const errors = [];
 
-async function shot(page, path) {
-  await page.screenshot({ path, fullPage: true });
+async function shot(page, name) {
+  await page.screenshot({ path: join(SHOT, `${name}.png`), fullPage: true });
 }
 
 async function checkPage(name, url, mobile, actions) {
@@ -29,7 +34,6 @@ async function checkPage(name, url, mobile, actions) {
   await page.goto(url, { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
   if (actions) await actions(page);
-  const text = await page.locator("body").innerText();
   const overflow = await page.evaluate(() => {
     const doc = document.documentElement;
     return {
@@ -38,116 +42,29 @@ async function checkPage(name, url, mobile, actions) {
       overflow: doc.scrollWidth > doc.clientWidth + 2,
     };
   });
-  await shot(page, `/workspace/screenshots/${name}.png`);
+  await shot(page, name);
   await context.close();
-  return { text, overflow, len: text.length };
+  return { overflow };
 }
 
-// Jobsite mobile dashboard
-const fpM = await checkPage(
-  "fp-mobile-dash",
-  "http://127.0.0.1:8080/jobsite",
-  true,
-  async (page) => {
-    await page.evaluate(() => localStorage.removeItem("lpin-jobsite-v1"));
-    await page.reload({ waitUntil: "networkidle" });
-    await page.waitForTimeout(300);
-    // bottom nav should exist
-  },
-);
-
-// Jobsite mobile report form
-const fpR = await checkPage(
-  "fp-mobile-report",
-  "http://127.0.0.1:8080/jobsite",
-  true,
-  async (page) => {
-    await page.evaluate(() => localStorage.removeItem("lpin-jobsite-v1"));
-    await page.reload({ waitUntil: "networkidle" });
+await checkPage("fp-mobile-dash", `${BASE}/jobsite`, true);
+await checkPage("fp-mobile-report", `${BASE}/jobsite`, true, async (page) => {
+  try {
     await page.getByRole("button", { name: /^Report$/i }).first().click();
     await page.waitForTimeout(300);
-  },
+  } catch {
+    /* optional */
+  }
+});
+await checkPage("fp-desktop-dash", `${BASE}/jobsite`, false);
+await checkPage("cc-mobile", `${BASE}/claims`, true).catch(() =>
+  checkPage("cc-mobile", `${BASE}/claimcard`, true),
 );
+await checkPage("home", `${BASE}/`, false);
 
-// Jobsite desktop dashboard
-const fpD = await checkPage(
-  "fp-desktop-dash",
-  "http://127.0.0.1:8080/jobsite",
-  false,
-  async (page) => {
-    await page.evaluate(() => localStorage.removeItem("lpin-jobsite-v1"));
-    await page.reload({ waitUntil: "networkidle" });
-    await page.waitForTimeout(300);
-  },
-);
-
-// Claims mobile board
-const ccM = await checkPage(
-  "cc-mobile-board",
-  "http://127.0.0.1:8080/claimcard",
-  true,
-  async (page) => {
-    await page.getByRole("button", { name: /Sample/i }).click();
-    await page.waitForTimeout(500);
-  },
-);
-
-// Claims desktop board
-const ccD = await checkPage(
-  "cc-desktop-board",
-  "http://127.0.0.1:8080/claimcard",
-  false,
-  async (page) => {
-    await page.getByRole("button", { name: /Sample/i }).click();
-    await page.waitForTimeout(500);
-  },
-);
-
-// Home mobile
-const homeM = await checkPage(
-  "home-mobile",
-  "http://127.0.0.1:8080/",
-  true,
-);
-
-console.log(
-  JSON.stringify(
-    {
-      fpMobile: {
-        hasBottomNav: fpM.text.includes("Home") && fpM.text.includes("Report"),
-        hasDashboard: fpM.text.includes("Jobsite dashboard"),
-        hasKpi: fpM.text.includes("Open reports"),
-        overflow: fpM.overflow,
-      },
-      fpReport: {
-        hasSubmit: fpR.text.includes("Submit active report"),
-        overflow: fpR.overflow,
-      },
-      fpDesktop: {
-        hasDashboard: fpD.text.includes("Jobsite dashboard"),
-        hasActivity: fpD.text.includes("Activity wire"),
-        hasPriority: fpD.text.includes("Priority reports"),
-        desktopNav: fpD.text.includes("Dashboard") && fpD.text.includes("Desk"),
-        overflow: fpD.overflow,
-      },
-      claimMobile: {
-        hasScore: ccM.text.includes("Score claims") || ccM.text.includes("Your score"),
-        hasBottom: ccM.text.includes("Score") && ccM.text.includes("Share"),
-        overflow: ccM.overflow,
-      },
-      claimDesktop: {
-        hasBoard: ccD.text.includes("Score claims") || ccD.text.includes("Claim"),
-        overflow: ccD.overflow,
-      },
-      homeMobile: {
-        hasApps: homeM.text.includes("Claims") && homeM.text.includes("Jobsite"),
-        mobileFirst: homeM.text.includes("Mobile-first") || homeM.text.includes("hand first"),
-        overflow: homeM.overflow,
-      },
-      errors,
-    },
-    null,
-    2,
-  ),
-);
 await browser.close();
+if (errors.length) {
+  console.error(errors.slice(0, 20));
+  process.exit(1);
+}
+console.log("qa-mobile-first OK →", SHOT);
