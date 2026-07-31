@@ -305,6 +305,40 @@ export interface SiteGeo {
   locateQuery?: string;
 }
 
+/** Org graph attached to every portfolio project (P1). Imported as type-only to avoid cycles. */
+export interface JobsiteOrgBundle {
+  version: 1;
+  projectId: string;
+  people: Array<{
+    id: string;
+    name: string;
+    title: string;
+    company: string;
+    roleId: string;
+    divisionCodes?: string[];
+    trade?: string;
+  }>;
+  divisions: Array<{ code: string; name: string; leadId: string }>;
+  contracts: Array<{
+    id: string;
+    name: string;
+    contractor: string;
+    vendorId: string;
+    valueLabel: string;
+    divisions: string[];
+    status: string;
+    noticeToProceedMonth: number;
+  }>;
+  vendors: Array<{
+    id: string;
+    name: string;
+    kind: string;
+    contractIds: string[];
+    divisionCodes: string[];
+  }>;
+  generatedAt: string;
+}
+
 export interface Jobsite {
   id: string;
   name: string;
@@ -326,6 +360,70 @@ export interface Jobsite {
   materialsBudget?: number;
   /** Optional user pin + imported/drawn layers (device-local) */
   siteGeo?: SiteGeo;
+  /**
+   * People · divisions · contracts · local vendors (P1 org model).
+   * Required for portfolio scale test bed; optional on blank user boards until generated.
+   */
+  org?: JobsiteOrgBundle;
+  /**
+   * National / multi-project vendors attached by affinity (P4).
+   * Cross-portfolio registry lives in project-national-vendors.ts.
+   */
+  nationalVendors?: Array<{
+    id: string;
+    name: string;
+    affinity: string[];
+    category: string;
+    reason: string;
+  }>;
+  /**
+   * Division-categorized field communication log (P2).
+   * Separate from legacy AuthorityMessage[] (`messages`) used by the desk wire.
+   */
+  fieldComms?: {
+    version: 1 | 2;
+    projectId: string;
+    /** v2: extreme 15-minute field-log mode */
+    mode?: "interval_15m" | string;
+    intervalMinutes?: number;
+    fullMessageCount?: number;
+    sampled?: boolean;
+    sampleCap?: number;
+    timeline?: {
+      startYmd?: string;
+      endYmd?: string;
+      durationCalendarDays?: number;
+      fieldWorkDays?: number;
+      intervalMinutes?: number;
+      workdayStartHour?: number;
+      workdayEndHour?: number;
+      workdaysOnly?: boolean;
+      intervalsPerWorkday?: number;
+      totalIntervals?: number;
+      [key: string]: unknown;
+    };
+    messages: Array<{
+      id: string;
+      projectId: string;
+      kind: string;
+      phase: string;
+      division: string;
+      scopes?: string[];
+      fromRole: string;
+      toRoles: string[];
+      fromName: string;
+      toNames: string[];
+      text: string;
+      contractId?: string;
+      vendorId?: string;
+      ackRequired?: boolean;
+      acked?: boolean;
+      programMonth?: number;
+      createdAt: string;
+      routingGap?: string;
+    }>;
+    generatedAt: string;
+  };
   reports: FieldReport[];
   messages: AuthorityMessage[];
   inspections: Inspection[];
@@ -358,6 +456,7 @@ export type JobsiteView =
   | "inspections"
   | "desk"
   | "project"
+  | "map"
   | "schedule"
   | "contacts"
   | "materials";

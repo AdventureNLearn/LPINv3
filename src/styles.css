@@ -394,12 +394,33 @@
     );
   }
 
+  /* Desktop shell: wider canvas for multi-window / multi-monitor work */
+  .desktop-shell-inner {
+    max-width: 72rem; /* ~max-w-6xl default */
+    width: 100%;
+  }
+
   @media (min-width: 768px) {
     .mobile-content {
       padding-bottom: 2rem;
     }
+
+    .desktop-shell-inner {
+      max-width: 90rem; /* roomy desktop */
+    }
+
+    .desktop-shell main {
+      /* slightly denser type rhythm on large screens without shrinking touch targets on mobile */
+    }
   }
 
+  @media (min-width: 1280px) {
+    .desktop-shell-inner {
+      max-width: 96rem;
+    }
+  }
+
+  /* Bottom nav is phone chrome — never show as primary desktop chrome */
   .bottom-nav {
     position: fixed;
     left: 0;
@@ -417,6 +438,12 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 -8px 28px -16px rgb(240 138 90 / 0.12);
+  }
+
+  @media (min-width: 768px) {
+    .bottom-nav {
+      display: none !important;
+    }
   }
 
   .bottom-nav-item {

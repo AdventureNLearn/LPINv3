@@ -1,0 +1,18 @@
+{
+  "phase": "P6",
+  "marker": "[P6-SCALE]",
+  "gate": "OPEN",
+  "benchmarks": {
+    "projects": 56,
+    "pass": 56,
+    "permitCoverage": 1,
+    "scheduleCoverage": 1,
+    "totalComms": 285504,
+    "totalOpenAcks": 1285,
+    "totalRoutingGaps": 0,
+    "msgsP50": 5440,
+    "msgsP95": 7296
+  },
+  "generatedAt": "2026-07-31T17:17:24.065Z",
+  "suiteSize": 56
+}

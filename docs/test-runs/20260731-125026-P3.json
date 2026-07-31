@@ -1,0 +1,2667 @@
+{
+  "summary": {
+    "phase": "P3",
+    "marker": "[P3-VENDOR]",
+    "targetSuite": 56,
+    "projects_total": 56,
+    "projects_pass": 56,
+    "projects_partial": 0,
+    "projects_fail": 0,
+    "projects_pending": 0,
+    "projects_blocked": 0,
+    "suiteChecks": [
+      {
+        "id": "P3.S1",
+        "ok": true,
+        "detail": "vendor-comm pass 56/56"
+      },
+      {
+        "id": "P3.S2",
+        "ok": true,
+        "detail": "avg vendors in log=5.5"
+      },
+      {
+        "id": "P3.S3",
+        "ok": true,
+        "detail": "avg contracts in log=6.5"
+      }
+    ],
+    "duration_ms": 63,
+    "gate": true
+  },
+  "rows": [
+    {
+      "projectId": "js_pf_sf-mission-sfr",
+      "name": "Mission Bay Townhome Court",
+      "stateCode": "CA",
+      "industry": "single_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 11/11"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_la-dtla-mf",
+      "name": "South Park Residences — Tower A",
+      "stateCode": "CA",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 10/10"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_sd-biotech-lab",
+      "name": "Torrey Pines Lab Fit-Out",
+      "stateCode": "CA",
+      "industry": "healthcare",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 11/11"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_sac-school-wing",
+      "name": "River City Elementary Wing",
+      "stateCode": "CA",
+      "industry": "education",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 10/10"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_sea-waterfront-hotel",
+      "name": "Elliott Bay Boutique Hotel",
+      "stateCode": "WA",
+      "industry": "hospitality",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 11/11"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_pdx-bridge-civil",
+      "name": "Willamette Trail Connector",
+      "stateCode": "OR",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 10/10"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=5 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/4"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 20,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 5
+      }
+    },
+    {
+      "projectId": "js_pf_boise-warehouse",
+      "name": "Treasure Valley Logistics Hub",
+      "stateCode": "ID",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_reno-data-shell",
+      "name": "Truckee Meadows Data Hall Shell",
+      "stateCode": "NV",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 10/10"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_phx-retail-pad",
+      "name": "Desert Ridge Retail Pad B",
+      "stateCode": "AZ",
+      "industry": "commercial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_tucson-mf-garden",
+      "name": "Catalina Foothills Garden MF",
+      "stateCode": "AZ",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 10/10"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_abq-hospital-wing",
+      "name": "Rio Grande Med Center Wing C",
+      "stateCode": "NM",
+      "industry": "healthcare",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_den-airport-hotel",
+      "name": "Front Range Airport Hotel",
+      "stateCode": "CO",
+      "industry": "hospitality",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_slc-office-tower",
+      "name": "Wasatch Commerce Tower",
+      "stateCode": "UT",
+      "industry": "commercial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 10/10"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_vegas-renovation",
+      "name": "Strip Corridor TI — Suite 400",
+      "stateCode": "NV",
+      "industry": "renovation",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=5 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/4"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 5
+      }
+    },
+    {
+      "projectId": "js_pf_hou-petrochem-yard",
+      "name": "Ship Channel Utility Yard",
+      "stateCode": "TX",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=4 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 2/2"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 18,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 4
+      }
+    },
+    {
+      "projectId": "js_pf_dal-mf-midrise",
+      "name": "Uptown Dallas Mid-Rise MF",
+      "stateCode": "TX",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_aus-sfr-green",
+      "name": "Barton Hills Net-Zero SFR",
+      "stateCode": "TX",
+      "industry": "single_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_sat-industrial",
+      "name": "Alamo Logistics Crossdock",
+      "stateCode": "TX",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_okc-school",
+      "name": "Prairie View Middle School",
+      "stateCode": "OK",
+      "industry": "education",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_nola-hospitality",
+      "name": "French Quarter Courtyard Inn",
+      "stateCode": "LA",
+      "industry": "hospitality",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 11/11"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_mia-highrise-mf",
+      "name": "Brickell Waterfront Residences",
+      "stateCode": "FL",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_tpa-civil-bridge",
+      "name": "Bay Causeway Utility Rehab",
+      "stateCode": "FL",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=4 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 2/2"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 18,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 4
+      }
+    },
+    {
+      "projectId": "js_pf_atl-commercial",
+      "name": "Midtown Atlanta Office Shell",
+      "stateCode": "GA",
+      "industry": "commercial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_chs-sfr-coastal",
+      "name": "Lowcountry Elevated SFR",
+      "stateCode": "SC",
+      "industry": "single_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 11/11"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_clt-healthcare",
+      "name": "Piedmont Outpatient Pavilion",
+      "stateCode": "NC",
+      "industry": "healthcare",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_nash-hotel",
+      "name": "Music Row Boutique Hotel",
+      "stateCode": "TN",
+      "industry": "hospitality",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_rva-renovation",
+      "name": "Shockoe Warehouse TI",
+      "stateCode": "VA",
+      "industry": "renovation",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=5 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/4"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 5
+      }
+    },
+    {
+      "projectId": "js_pf_nyc-highrise",
+      "name": "Hudson Yards Block Infill",
+      "stateCode": "NY",
+      "industry": "commercial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_bos-education",
+      "name": "Harborview STEM Academy",
+      "stateCode": "MA",
+      "industry": "education",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_phi-mf",
+      "name": "Navy Yard Workforce Housing",
+      "stateCode": "PA",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_bal-civil",
+      "name": "Inner Harbor Storm Outfall",
+      "stateCode": "MD",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=4 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/3"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 19,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 4
+      }
+    },
+    {
+      "projectId": "js_pf_nwk-industrial",
+      "name": "Portside Cold Storage",
+      "stateCode": "NJ",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_buf-renovation",
+      "name": "Grain Elevator Arts Adaptive Reuse",
+      "stateCode": "NY",
+      "industry": "renovation",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=5 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/4"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 5
+      }
+    },
+    {
+      "projectId": "js_pf_chi-highrise-mf",
+      "name": "River North Residences",
+      "stateCode": "IL",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_det-industrial",
+      "name": "River Rouge EV Battery Plant Shell",
+      "stateCode": "MI",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_msp-healthcare",
+      "name": "Twin Cities Specialty Clinic",
+      "stateCode": "MN",
+      "industry": "healthcare",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_mil-education",
+      "name": "Lakefront Technical High School",
+      "stateCode": "WI",
+      "industry": "education",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_cle-civil",
+      "name": "Cuyahoga Utility Corridor",
+      "stateCode": "OH",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 7/7"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=4 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/3"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 19,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 4
+      }
+    },
+    {
+      "projectId": "js_pf_stl-commercial",
+      "name": "Gateway District Office Renovation",
+      "stateCode": "MO",
+      "industry": "renovation",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=5 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/4"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 5
+      }
+    },
+    {
+      "projectId": "js_pf_ind-sfr",
+      "name": "Broad Ripple Infill SFR",
+      "stateCode": "IN",
+      "industry": "single_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_kc-mf",
+      "name": "Crossroads Lofts MF",
+      "stateCode": "MO",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_oma-industrial",
+      "name": "Missouri River Ag Processing",
+      "stateCode": "NE",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_fargo-civil",
+      "name": "Red River Flood Diversion Segment",
+      "stateCode": "ND",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=4 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/3"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 19,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 4
+      }
+    },
+    {
+      "projectId": "js_pf_billings-hotel",
+      "name": "Yellowstone Gateway Lodge",
+      "stateCode": "MT",
+      "industry": "hospitality",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_anc-healthcare",
+      "name": "Cook Inlet Regional Clinic",
+      "stateCode": "AK",
+      "industry": "healthcare",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_hnl-hotel",
+      "name": "Waikiki Courtyard Refresh",
+      "stateCode": "HI",
+      "industry": "hospitality",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 11/11"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_hilo-education",
+      "name": "East Hawaii STEM Annex",
+      "stateCode": "HI",
+      "industry": "education",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=8 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=7 contracts=8"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 6/7"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 7,
+        "contractsInLog": 8,
+        "orgVendors": 8
+      }
+    },
+    {
+      "projectId": "js_pf_ric-commercial",
+      "name": "Capital District Flex Office",
+      "stateCode": "NC",
+      "industry": "commercial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_jax-industrial",
+      "name": "Port of Jax Cold Chain",
+      "stateCode": "FL",
+      "industry": "industrial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 12/12"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_pit-renovation",
+      "name": "Steel City Mill Lofts TI",
+      "stateCode": "PA",
+      "industry": "renovation",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=5 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 3/4"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 5
+      }
+    },
+    {
+      "projectId": "js_pf_col-sfr",
+      "name": "German Village Carriage House SFR",
+      "stateCode": "OH",
+      "industry": "single_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=6 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=5 contracts=6"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 4/5"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 21,
+        "vendorsInLog": 5,
+        "contractsInLog": 6,
+        "orgVendors": 6
+      }
+    },
+    {
+      "projectId": "js_pf_mem-civil",
+      "name": "Mississippi Bluff Stabilization",
+      "stateCode": "TN",
+      "industry": "civil",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 8/8"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=4 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=4 contracts=5"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 2/2"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 18,
+        "vendorsInLog": 4,
+        "contractsInLog": 5,
+        "orgVendors": 4
+      }
+    },
+    {
+      "projectId": "js_pf_alb-education",
+      "name": "Capital Region CTE Center",
+      "stateCode": "NY",
+      "industry": "education",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_tul-mf",
+      "name": "Arts District Live-Work MF",
+      "stateCode": "OK",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_pf_elp-commercial",
+      "name": "Borderland Logistics Offices",
+      "stateCode": "TX",
+      "industry": "commercial",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    },
+    {
+      "projectId": "js_sample_demo",
+      "name": "Sample multi-family board — Building B (demo slot)",
+      "stateCode": "US",
+      "industry": "multi_family",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "P3.1",
+          "ok": true,
+          "detail": "trade msgs keyed 9/9"
+        },
+        {
+          "id": "P3.1b",
+          "ok": true,
+          "detail": "all messages vendor+contract keyed"
+        },
+        {
+          "id": "P3.2",
+          "ok": true,
+          "detail": "vendors=7 all linked to contracts"
+        },
+        {
+          "id": "P3.3",
+          "ok": true,
+          "detail": "archive groups vendors=6 contracts=7"
+        },
+        {
+          "id": "P3.4",
+          "ok": true,
+          "detail": "cross-contract vendor v_gc contracts=C-GC-01,C-GC-ALW"
+        },
+        {
+          "id": "P3.5",
+          "ok": true,
+          "detail": "trade vendors in log 5/6"
+        }
+      ],
+      "hardPass": true,
+      "softPass": true,
+      "vendorSummary": {
+        "messages": 22,
+        "vendorsInLog": 6,
+        "contractsInLog": 7,
+        "orgVendors": 7
+      }
+    }
+  ],
+  "generatedAt": "2026-07-31T16:50:27.047Z"
+}

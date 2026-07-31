@@ -1,3 +1,11 @@
+import { generateProjectComms } from "./project-comm-generate";
+import { generateIntervalCommLog } from "./project-comm-interval";
+import {
+  buildNationalVendorLedger,
+  nationalVendorsForProject,
+} from "./project-national-vendors";
+import { generateProjectOrg } from "./project-org-generate";
+import { allowIntervalFieldLogSeed } from "./release-mode";
 import type { Jobsite } from "./types";
 
 /** Demo multi-family jobsite — reports, permit messages, and inspections already wired. */
@@ -11,6 +19,56 @@ export function createDemoJobsite(): Jobsite {
     const day = String(dt.getDate()).padStart(2, "0");
     return `${y}-${m}-${day}`;
   };
+
+  const org = generateProjectOrg({
+    id: "js_sample_demo",
+    name: "Sample multi-family board — Building B",
+    city: "United States",
+    stateCode: "US",
+    industry: "multi_family",
+    env: ["urban_dense"],
+    captain: "M. Reyes (site superintendent)",
+    phase: "structure",
+  });
+  const demoMeta = {
+    id: "js_sample_demo",
+    name: "Sample multi-family board — Building B",
+    stateCode: "US",
+    industry: "multi_family",
+    env: ["urban_dense"],
+    interests: ["life_safety", "high_rise"],
+  };
+  const nationalLedger = buildNationalVendorLedger([demoMeta]);
+  const nationalVendors = nationalVendorsForProject(
+    "js_sample_demo",
+    nationalLedger,
+  );
+  const fieldComms = allowIntervalFieldLogSeed()
+    ? generateIntervalCommLog(
+        {
+          id: "js_sample_demo",
+          name: "Sample multi-family board — Building B",
+          city: "United States",
+          stateCode: "US",
+          industry: "multi_family",
+          env: ["urban_dense"],
+          blurb: "Sample US multi-family board.",
+          nationalVendorIds: nationalVendors.map((n) => n.id),
+        },
+        org,
+      )
+    : generateProjectComms(
+        {
+          id: "js_sample_demo",
+          name: "Sample multi-family board — Building B",
+          city: "United States",
+          stateCode: "US",
+          industry: "multi_family",
+          env: ["urban_dense"],
+          blurb: "Sample US multi-family board.",
+        },
+        org,
+      );
 
   return {
     id: "js_sample_demo",
@@ -28,6 +86,9 @@ export function createDemoJobsite(): Jobsite {
     captainName: "M. Reyes (site superintendent)",
     notes: "Sample US multi-family board. Wipe and create your project anytime.",
     updatedAt: new Date().toISOString(),
+    org,
+    nationalVendors,
+    fieldComms: fieldComms as Jobsite["fieldComms"],
     reports: [
       {
         id: "fr_swq_p0",
