@@ -1,5 +1,5 @@
 /**
- * Structured print → Save as PDF documents for LPIN Suite Jobsite.
+ * Structured print → Save as PDF documents for LPINv3 Jobsite.
  * Browser print dialog; no proprietary PDF service.
  */
 
@@ -71,7 +71,7 @@ const SHELL_CSS = `
 `;
 
 function doc(title: string, body: string): string {
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>${esc(title)}</title><style>${SHELL_CSS}</style></head><body>${body}<div class="foot">Team jobsite board — not a city login or legal system of record. Not legal advice. LPIN Suite Jobsite · United States. ${esc(PUBLIC_FOOTER.short)}</div></body></html>`;
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>${esc(title)}</title><style>${SHELL_CSS}</style></head><body>${body}<div class="foot">Team jobsite board — not a city login or legal system of record. Not legal advice. LPINv3 Jobsite · United States. ${esc(PUBLIC_FOOTER.short)}</div></body></html>`;
 }
 
 function header(jobsite: Jobsite, docTitle: string): string {

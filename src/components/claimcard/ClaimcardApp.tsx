@@ -235,7 +235,7 @@ function HomeStep() {
       <header className="space-y-3">
         <span className="lpin-chip">
           <Sparkles className="size-3" />
-          LPIN Suite · Claims
+          LPINv3 · Claims
         </span>
         <h1 className="font-display text-2xl font-medium tracking-tight text-fg text-balance sm:text-4xl">
           Paste an X link.

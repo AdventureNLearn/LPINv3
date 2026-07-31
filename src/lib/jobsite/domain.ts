@@ -157,7 +157,7 @@ export function buildDeskSummary(jobsite: Jobsite): string {
   const open = jobsite.reports.filter((r) => r.status !== "resolved").length;
   const mat = jobsite.materials ?? [];
   const lines = [
-    `LPIN Suite Jobsite desk summary — ${jobsite.name}`,
+    `LPINv3 Jobsite desk summary — ${jobsite.name}`,
     `Region: United States`,
     `Industry: ${jobsite.industry ?? "not set"}`,
     `Location: ${jobsite.location}${jobsite.cityState ? ` (${jobsite.cityState})` : ""}`,
@@ -343,7 +343,7 @@ export function buildPrintHtml(jobsite: Jobsite): string {
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>LPIN Suite Jobsite readiness — ${esc(jobsite.name)}</title>
+<title>LPINv3 Jobsite readiness — ${esc(jobsite.name)}</title>
 <style>
   body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; color: #111; margin: 24px; line-height: 1.4; }
   h1 { font-size: 20px; margin: 0 0 4px; }
@@ -358,7 +358,7 @@ export function buildPrintHtml(jobsite: Jobsite): string {
 </style>
 </head>
 <body>
-  <h1>LPIN Suite Jobsite readiness packet</h1>
+  <h1>LPINv3 Jobsite readiness packet</h1>
   <p class="meta">
     <strong>${esc(jobsite.name)}</strong><br/>
     ${esc(jobsite.location)}${cityLine} · United States<br/>
@@ -390,7 +390,7 @@ export function buildPrintHtml(jobsite: Jobsite): string {
   </table>
   <div class="foot">
     Team board only — not a city/county login or legal system of record. Not legal advice.
-    LPIN Suite Jobsite · United States. ${esc(PUBLIC_FOOTER.short)}
+    LPINv3 Jobsite · United States. ${esc(PUBLIC_FOOTER.short)}
   </div>
 </body>
 </html>`;

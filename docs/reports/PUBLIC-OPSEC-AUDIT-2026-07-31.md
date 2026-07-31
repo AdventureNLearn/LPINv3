@@ -1,7 +1,7 @@
 # Public OPSEC audit baseline (R0)
 
 **Date:** 2026-07-31  
-**Tree:** `C:\AOS\products\LPINsuite_v2` @ `6cf16d9` (+ WIP after desktop fidelity freeze)  
+**Tree:** `(product tree)` @ `6cf16d9` (+ WIP after desktop fidelity freeze)  
 **Target class:** `public-suite` (forkable GitHub product)  
 **Doctrine:** HARD-RULES §1 · BUILD-GUIDELINES D1–D7 · PUBLIC_SURFACE_CONTRACT  
 
@@ -61,7 +61,7 @@ Examples of denylist hits: Miami, Tampa, Jacksonville, Austin, Denver, Phoenix, 
 | Named-metro research catalog (lab file or private testbed) | Real city catalog on `main` |
 | `docs/test-runs/**` harness dumps | 114 city-bearing JSON/md on public GitHub |
 | `VITE_LPIN_LAB_SCALE=1` densify | Default seed densify |
-| Host dual-Z under `C:\AOS\desktop` | Required path for forks |
+| Host dual-Z scripts (outside product repo) | Required path for forks |
 | Ops Working Document | Product README dependency |
 
 ---

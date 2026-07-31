@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Fails if named municipalities appear in product/source paths.
- * Geographic agnosticism / OPSEC gate for open-source LPIN Suite.
+ * Geographic agnosticism / OPSEC gate for open-source LPINv3.
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";

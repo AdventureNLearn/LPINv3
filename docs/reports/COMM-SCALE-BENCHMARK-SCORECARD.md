@@ -158,14 +158,15 @@ Categories include: steel, envelope, glazing, concrete, MEP, electrical, fire/li
 ## How to reproduce
 
 ```bash
-cd C:\AOS\products\LPINsuite_v2
+cd (product tree)
 npm run test:portfolio:gates
 ```
 
 Phase review (4 locked dual-Z projects):
 
 ```powershell
-powershell -File C:\AOS\desktop\Open-LPIN-PhaseReview.ps1 -Projects "js_pf_chi-highrise-mf,js_pf_hnl-hotel,js_pf_hou-petrochem-yard,js_pf_bos-education"
+# Optional operator dual-window review (host-only scripts; not required for forks)
+# Open four Jobsite windows on different projects with lock enabled.
 ```
 
 ---
@@ -194,4 +195,4 @@ powershell -File C:\AOS\desktop\Open-LPIN-PhaseReview.ps1 -Projects "js_pf_chi-h
 
 ---
 
-*Generated 2026-07-31 · LPIN Suite local scale exercise · Not legal advice · Not a city portal*
+*Generated 2026-07-31 · LPINv3 local scale exercise · Not legal advice · Not a city portal*

@@ -100,7 +100,7 @@ export function buildMarkdownPack(pack: ClaimPack, status: Layer0Status): string
   const mode = status.canShareClean ? "CLEAN" : "HOLD (open −1 claims)";
   const ctx = pack.context;
   const lines: string[] = [
-    `# LPIN Suite Claims pack — ${mode}`,
+    `# LPINv3 Claims pack — ${mode}`,
     "",
     `**Source post:** ${pack.postUrl || "(pasted text only)"}`,
     `**Author:** ${pack.authorHandle || ctx?.authorName || "unknown"}`,
@@ -206,7 +206,7 @@ export function buildShareText(pack: ClaimPack, status: Layer0Status): string {
   const mode = status.canShareClean ? "clean pack" : "hold pack";
   const { supported, unproven, disputed } = status.histogram;
   const text = [
-    `LPIN Suite Claims ${mode}: ${pack.title}`,
+    `LPINv3 Claims ${mode}: ${pack.title}`,
     `Supported ${supported} · Unproven ${unproven} · Disputed ${disputed}`,
     `Basis — E ${status.basisHistogram.evidence} · I ${status.basisHistogram.inference} · A ${status.basisHistogram.assumption}`,
     pack.authorHandle ? `Author ${pack.authorHandle}` : "",

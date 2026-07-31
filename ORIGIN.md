@@ -1,10 +1,13 @@
 # Origin
 
-Public history for LPIN Suite starts at this repository (`LPINsuite_v2`).
+Public product history for **LPINv3** starts at this repository (`AdventureNLearn/LPINv3`).
 
-- **Seed tip** (pre-archive product tree): `6d6218fe4d55017d07dcb9e5de5435848272d592`
-- **Archived predecessor**: `AdventureNLearn/LPINsuite-Archives` (read-only historical reference)
-- **Offline mirror**: maintained by project owners (not published)
+| Ref | Role |
+| --- | --- |
+| **LPINv3** | Current public, forkable product |
+| **LPINsuite_v2** | Prior public tree (historical) |
+| **LPINsuite-Archives** | Read-only archived predecessors |
+| Offline mirrors | Maintained by project owners (not required to build) |
 
 No municipality-named examples are intentional product surface.
 
@@ -15,5 +18,7 @@ No municipality-named examples are intentional product surface.
 | Jobsite + Claims | Device-local boards; open project packs |
 | State-first AHJ packs | All 50 states + DC under `public/packs/`; city freeform only |
 | Site map | MapLibre + user GeoJSON/site packs; GeoLibre-compatible handoff (not bundled) |
+| Desktop fidelity | Dense multi-window Jobsite shell (tag `desktop/fidelity-v1`) |
+| Editions | Desktop shell frozen; mobile edition path prepared |
 
 Credits for third-party software: [ACKNOWLEDGMENTS.md](./ACKNOWLEDGMENTS.md).

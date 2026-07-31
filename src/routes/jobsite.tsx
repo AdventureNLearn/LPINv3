@@ -6,12 +6,12 @@ export const Route = createFileRoute("/jobsite")({
   head: () => ({
     meta: [
       {
-        title: "Jobsite · LPIN Suite",
+        title: "Jobsite · LPINv3",
       },
       {
         name: "description",
         content:
-          "LPIN Suite Jobsite — US field reports, building-department team lane, inspections, industry schedules, and materials. Open packs. Device-local.",
+          "LPINv3 Jobsite — US field reports, building-department team lane, inspections, industry schedules, and materials. Open packs. Device-local.",
       },
     ],
   }),

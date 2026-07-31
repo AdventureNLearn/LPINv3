@@ -1,6 +1,6 @@
 # Public Surface Contract
 
-**Applies to:** Claims, Jobsite, LPIN Suite home, share/export text  
+**Applies to:** Claims, Jobsite, LPINv3 home, share/export text  
 **Does not rewrite:** SuperGrok server skills under operator space (kept as written)
 
 ## Purpose

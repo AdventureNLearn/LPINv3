@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * LPIN Suite full E2E (Playwright).
+ * LPINv3 full E2E (Playwright).
  *
  * Prerequisites: app reachable at BASE (default http://127.0.0.1:8090).
  *   npm run dev   # in another terminal, or already up

@@ -1,5 +1,5 @@
 /**
- * Portable LPIN Suite Jobsite project packs — open JSON anyone can inspect, backup, or hand off.
+ * Portable LPINv3 Jobsite project packs — open JSON anyone can inspect, backup, or hand off.
  */
 
 import { sanitizeForPublicSurface } from "@/lib/integrity";
@@ -8,7 +8,7 @@ import { normalizeSiteGeo } from "./site-geo";
 import type { JobsitePack, Jobsite } from "./types";
 
 export const PACK_DISCLAIMER =
-  "LPIN Suite Jobsite project pack (United States). Team board only — not a city/county system of record. Not legal advice. A person owns every status.";
+  "LPINv3 Jobsite project pack (United States). Team board only — not a city/county system of record. Not legal advice. A person owns every status.";
 
 export function buildPack(jobsite: Jobsite): JobsitePack {
   return {
@@ -158,7 +158,7 @@ export function openPrintPacket(html: string, title: string): void {
 
 export function buildMailtoHref(jobsite: Jobsite, body: string): string {
   const subject = encodeURIComponent(
-    `LPIN Suite Jobsite readiness — ${jobsite.name} · ${jobsite.permitNumber}`,
+    `LPINv3 Jobsite readiness — ${jobsite.name} · ${jobsite.permitNumber}`,
   );
   const text = encodeURIComponent(
     sanitizeForPublicSurface(
@@ -167,7 +167,7 @@ export function buildMailtoHref(jobsite: Jobsite, body: string): string {
         "",
         "—",
         PACK_DISCLAIMER,
-        "Sent from LPIN Suite Jobsite (team board on this device).",
+        "Sent from LPINv3 Jobsite (team board on this device).",
       ].join("\n"),
     ),
   );

@@ -6,12 +6,12 @@ export const Route = createFileRoute("/claims")({
   head: () => ({
     meta: [
       {
-        title: "Claims · LPIN Suite",
+        title: "Claims · LPINv3",
       },
       {
         name: "description",
         content:
-          "LPIN Suite Claims — paste a public post, break it into claims, score Supported / Unproven / Disputed. Clean share only when open disputes are closed.",
+          "LPINv3 Claims — paste a public post, break it into claims, score Supported / Unproven / Disputed. Clean share only when open disputes are closed.",
       },
     ],
   }),

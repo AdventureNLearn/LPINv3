@@ -3,8 +3,8 @@
 **Status:** ACTIVE  
 **Opened:** 2026-07-31  
 **Sources:**  
-- Lab: `https://github.com/AdventureNLearn/lpin-jobsite-chat-lab` (local `C:\AOS\products\lpin-jobsite-chat-lab`)  
-- Product: `C:\AOS\products\LPINsuite_v2`  
+- Lab: `https://github.com/AdventureNLearn/lpin-jobsite-chat-lab` (local `(private chat-lab)`)  
+- Product: `(product tree)`  
 - Portfolio seed: `src/lib/jobsite/project-catalog.ts`  
 **Target suite size:** **56 projects** (55 seed boards + 1 live/demo slot, or expand seed to 56)  
 **Policy:** Lab is pattern source only — no blind merge to production. Archive + benchmark every phase gate.
@@ -360,4 +360,4 @@ Benchmark fields (minimum):
 
 ---
 
-*Plan owner: Grok Build session · Product: LPINsuite_v2 · Lab: lpin-jobsite-chat-lab*
+*Plan owner: Grok Build session · Product: LPINv3 · Lab: lpin-jobsite-chat-lab*

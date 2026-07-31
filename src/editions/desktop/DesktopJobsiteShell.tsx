@@ -537,7 +537,7 @@ function FeedView() {
           <div className="min-w-0 space-y-1.5">
             <span className="lpin-chip">
               <Zap className="size-3" />
-              LPIN Suite · Jobsite
+              LPINv3 · Jobsite
             </span>
             <h1 className="font-display text-2xl font-medium tracking-tight text-fg text-balance sm:text-3xl lg:text-4xl">
               Jobsite board
