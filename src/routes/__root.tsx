@@ -15,12 +15,12 @@ export const Route = createRootRoute({
         ),
       },
       {
-        title: "LPIN Suite — Claims & Jobsite",
+        title: "LPINv3 — Claims & Jobsite",
       },
       {
         name: "description",
         content:
-          "LPIN Suite: Claims scores public claims without fake certainty. Jobsite runs a US field board with building-department messages, inspections, schedules, and materials. Open packs. Device-local.",
+          "LPINv3: Claims scores public claims without fake certainty. Jobsite runs a US field board with building-department messages, inspections, schedules, and materials. Open packs. Device-local.",
       },
       { name: "theme-color", content: "#060e16" },
       { name: "mobile-web-app-capable", content: "yes" },

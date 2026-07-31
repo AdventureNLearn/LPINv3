@@ -33,7 +33,7 @@ if (!skipBuild) {
 
 console.log("");
 console.log("══════════════════════════════════════════");
-console.log(" LPIN public audit  (forkable product)");
+console.log(" LPINv3 public audit  (forkable product)");
 console.log("══════════════════════════════════════════");
 console.log("");
 

@@ -10,7 +10,7 @@ import type { BasisKind, HarborRule, PublicSurfaceFooter } from "./types";
 export const LPIN_EXPANDED =
   "Light · Proof · Integrity · Navigation" as const;
 
-/** User-facing working rules — shared by LPIN Suite Claims, Jobsite, and home. */
+/** User-facing working rules — shared by LPINv3 Claims, Jobsite, and home. */
 export const HARBOR_RULES: HarborRule[] = [
   {
     id: "honest-unknown",
@@ -36,9 +36,9 @@ export const HARBOR_RULES: HarborRule[] = [
 
 /** Short lines for footers and share packs (no political/religious framing). */
 export const PUBLIC_FOOTER: PublicSurfaceFooter = {
-  short: "A person made every judgment. Not automated truth. LPIN Suite tools.",
+  short: "A person made every judgment. Not automated truth. LPINv3 tools.",
   product:
-    "LPIN Suite · Light · Proof · Integrity · Navigation · open packs",
+    "LPINv3 · Light · Proof · Integrity · Navigation · open packs",
 };
 
 export const SCORE_GUIDE = {

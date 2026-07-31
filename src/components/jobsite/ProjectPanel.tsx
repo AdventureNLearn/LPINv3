@@ -268,7 +268,7 @@ export function ProjectView() {
   function onPrint() {
     try {
       const j = useJobsiteStore.getState().jobsite;
-      openPrintPacket(buildPrintHtml(j), `LPIN Suite Jobsite — ${j.name}`);
+      openPrintPacket(buildPrintHtml(j), `LPINv3 Jobsite — ${j.name}`);
       toast.message("Print dialog — choose Save as PDF for a file.");
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Print failed.");

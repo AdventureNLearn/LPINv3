@@ -21,7 +21,7 @@ function HomePage() {
         <section className="lpin-banner relative mb-5 aspect-[3/1] w-full sm:mb-8">
           <img
             src="/lpin/banner-lpin-x.jpg"
-            alt="LPIN Suite — construction and claims tools"
+            alt="LPINv3 — construction and claims tools"
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
         </section>
@@ -29,10 +29,10 @@ function HomePage() {
         <section className="mb-6 space-y-3 sm:mb-10">
           <span className="lpin-chip">
             <HardHat className="size-3" />
-            LPIN Suite · open tools
+            LPINv3 · open tools
           </span>
           <h1 className="max-w-2xl font-display text-3xl font-medium tracking-tight text-fg text-balance sm:text-4xl lg:text-5xl">
-            LPIN Suite
+            LPINv3
             <span className="text-gold"> for the jobsite and the claims desk</span>
           </h1>
           <p className="max-w-xl text-sm leading-relaxed text-fg-muted text-pretty sm:text-base">
@@ -67,7 +67,7 @@ function HomePage() {
         <section className="grid gap-4 md:grid-cols-2">
           <AppCard
             to="/claims"
-            kicker="LPIN Suite · Claims"
+            kicker="LPINv3 · Claims"
             name="Claims"
             pitch="Paste a public post link. Break it into claims. Score only Supported, Unproven, or Disputed — hold a clean share until open gaps are closed."
             points={[
@@ -80,7 +80,7 @@ function HomePage() {
           />
           <AppCard
             to="/jobsite"
-            kicker="LPIN Suite · Jobsite"
+            kicker="LPINv3 · Jobsite"
             name="Jobsite"
             pitch="Field reports, messages to the building department lane, inspection scheduling, industry schedules, and materials — wired so stop-work items never hide under a green dashboard."
             points={[

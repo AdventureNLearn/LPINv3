@@ -52,7 +52,7 @@ export function AppShell({
             to="/"
             className="group flex min-h-11 items-center gap-2.5 no-underline"
           >
-            <span className="lpin-mark" title="LPIN Suite">
+            <span className="lpin-mark" title="LPINv3">
               <img
                 src="/lpin/mark-lpin-sq.png"
                 alt=""
@@ -62,7 +62,7 @@ export function AppShell({
             </span>
             <span className="flex flex-col leading-none">
               <span className="text-sm font-semibold tracking-tight text-fg">
-                LPIN Suite
+                LPINv3
               </span>
               <span className="hidden text-[10px] font-medium uppercase tracking-[0.14em] text-gold sm:inline">
                 Light · Proof · Integrity · Navigation
@@ -141,7 +141,7 @@ export function AppShell({
             <div className="lpin-divider" />
             <p className="flex items-center justify-center gap-1.5 text-center text-xs leading-relaxed text-fg-subtle text-pretty">
               <HardHat className="size-3 text-gold" />
-              LPIN Suite · A person makes the final call · Not legal advice
+              LPINv3 · A person makes the final call · Not legal advice
             </p>
             <p className="hidden text-center text-[10px] text-fg-subtle md:block">
               Desktop: use the window buttons to open Claims, Jobsite, or Map side by side.

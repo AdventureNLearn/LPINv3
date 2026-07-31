@@ -1,8 +1,10 @@
-# LPIN Suite
+# LPINv3
 
 **Light · Proof · Integrity · Navigation**
 
 Open tools for the jobsite and the claims desk. Device-local. United States. Guidance only — not a city portal login, not legal advice.
+
+Public product name: **LPINv3** · Repo: [`AdventureNLearn/LPINv3`](https://github.com/AdventureNLearn/LPINv3)
 
 ## Apps
 
@@ -24,9 +26,11 @@ State-level guidance is fine. Users type their own city/county freeform.
 npm run opsec:check
 ```
 
-## Develop
+## Develop (fork-friendly)
 
 ```bash
+git clone https://github.com/AdventureNLearn/LPINv3.git
+cd LPINv3
 npm ci
 npm run dev          # http://127.0.0.1:8090
 npm run typecheck
@@ -35,7 +39,9 @@ npm run audit:public # OPSEC + densify guard + typecheck + build (pre-publish)
 npm run qa           # Playwright E2E (dev server must be up; LPIN_BASE_URL optional)
 ```
 
-Forkable public releases: see **[docs/PUBLIC-RELEASE.md](./docs/PUBLIC-RELEASE.md)**.  
+No monorepo, private lab, or host machine paths required.
+
+Forkable release notes: **[docs/PUBLIC-RELEASE.md](./docs/PUBLIC-RELEASE.md)**.  
 Lab densify (`npm run dev:lab`) is research-only — never the public default (D1).
 
 ## Credits
@@ -44,7 +50,7 @@ Open-source stacks that power LPIN (MapLibre, OpenStreetMap, Open-Meteo, TanStac
 
 ## History
 
-Clean public tree. Prior development history is archived separately (offline mirror + GitHub archive repo `LPINsuite-Archives`). See [ORIGIN.md](./ORIGIN.md).
+Public line: **LPINv3**. Earlier public tree: `LPINsuite_v2`. Archives: `LPINsuite-Archives`. See [ORIGIN.md](./ORIGIN.md).
 
 ## License
 

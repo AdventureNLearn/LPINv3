@@ -12,7 +12,7 @@ import {
 import type { Jobsite, SiteGeo, SitePack } from "./types";
 
 export const SITE_PACK_DISCLAIMER =
-  "LPIN Suite site geometry pack (United States). User-owned map pin and layers on this device — not a city/county system of record, not legal advice, not an AHJ portal. State selection still drives code packs separately.";
+  "LPINv3 site geometry pack (United States). User-owned map pin and layers on this device — not a city/county system of record, not legal advice, not an AHJ portal. State selection still drives code packs separately.";
 
 export function buildSitePack(jobsite: Jobsite): SitePack | null {
   const siteGeo = normalizeSiteGeo(jobsite.siteGeo);

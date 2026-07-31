@@ -31,13 +31,13 @@ export async function sharePackIfPossible(jobsite: Jobsite): Promise<"shared" | 
       if (navigator.canShare({ files: [file] })) {
         await navigator.share({
           files: [file],
-          title: `LPIN Suite Jobsite — ${jobsite.name}`,
+          title: `LPINv3 Jobsite — ${jobsite.name}`,
           text: "Open project pack (device-local team board).",
         });
         return "shared";
       }
       await navigator.share({
-        title: `LPIN Suite Jobsite — ${jobsite.name}`,
+        title: `LPINv3 Jobsite — ${jobsite.name}`,
         text: text.slice(0, 4000),
       });
       return "shared";

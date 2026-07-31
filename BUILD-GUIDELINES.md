@@ -1,4 +1,4 @@
-# LPIN Suite — Build Guidelines
+# LPINv3 — Build Guidelines
 
 **Status:** ACTIVE (AdventureNLearn decisions D1–D7, 2026-07-31)  
 **Companion:** `PUBLIC_SURFACE_CONTRACT.md` · `docs/PUBLIC-RELEASE.md`  
@@ -27,7 +27,7 @@ These rules govern what may ship on a **public product path** vs what stays in *
 | | **Product path** | **Lab / research path** |
 |--|------------------|-------------------------|
 | **Purpose** | Daily use: board, reports, inspections, map, plain owner status | Scale simulation, process research, dual-monitor experiments |
-| **Repos** | `LPINsuite_v2` (or any public release you choose under D2) | Private `lpin-comm-scale-testbed`, `lpin-jobsite-chat-lab` |
+| **Repos** | `LPINv3` (public GitHub product) | Private `lpin-comm-scale-testbed`, `lpin-jobsite-chat-lab` |
 | **Default field logs** | Narrative / human-scale samples | Optional **IX-15M** full interval streams |
 | **56-project portfolio densify** | Off unless explicit lab flag | On in lab branch / `VITE_LPIN_LAB_SCALE=1` |
 | **Harness gates P0–IX** | Not required to run for ship | Required before claiming scale results |

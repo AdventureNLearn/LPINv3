@@ -1,6 +1,6 @@
 # Acknowledgments
 
-LPIN Suite is open source (MIT). This file credits the people and projects that make the suite possible. Product copy stays plain field language; deeper license text lives here and in dependency packages.
+LPINv3 is open source (MIT). This file credits the people and projects that make the suite possible. Product copy stays plain field language; deeper license text lives here and in dependency packages.
 
 ## Product stance
 
@@ -45,7 +45,7 @@ Exact versions and full license texts ship with `node_modules` after `npm ci`. R
 
 ## History
 
-Public history for this product line starts at **`AdventureNLearn/LPINsuite_v2`**.  
+Public history for this product line starts at **`AdventureNLearn/LPINv3`**.  
 Predecessor work is archived at **`AdventureNLearn/LPINsuite-Archives`** (read-only historical reference). See [ORIGIN.md](./ORIGIN.md).
 
 ## Contributing credit

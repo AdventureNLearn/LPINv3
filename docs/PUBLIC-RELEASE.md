@@ -1,32 +1,31 @@
-# Public release track (forkable product)
+# Public release track — LPINv3
 
-**Purpose:** Ship a clean, independent Jobsite + Claims product to GitHub while the host machine keeps full lab experimentation.
+**Purpose:** Ship a clean, independent Jobsite + Claims product to GitHub while private hosts keep full lab experimentation.
 
 | Track | Where | Rules |
 |-------|--------|-------|
-| **Local / lab** | This machine + private testbed | Densify, dual-Z, scale harness, WIP mobile |
-| **Public** | `AdventureNLearn/LPINsuite_v2` | OPSEC clean, product seed only, portable, MIT |
+| **Local / lab** | Operator machines + private testbed | Densify, dual-Z, scale harness, WIP mobile |
+| **Public** | [`AdventureNLearn/LPINv3`](https://github.com/AdventureNLearn/LPINv3) | OPSEC clean, product seed only, portable, MIT |
 
-## Fork quickstart (strangers / CI)
+## Fork quickstart
 
 ```bash
-git clone https://github.com/AdventureNLearn/LPINsuite_v2.git
-cd LPINsuite_v2
+git clone https://github.com/AdventureNLearn/LPINv3.git
+cd LPINv3
 npm ci
 npm run dev          # http://127.0.0.1:8090
 npm run audit:public # OPSEC + densify guard + typecheck + build
 ```
 
-No `C:\AOS` monorepo, no private submodules, no lab flag required.
+No host monorepo, private submodules, or lab flag required.
 
 ## Before every public tag
 
 1. `npm run audit:public` green  
-2. Host (optional but required for AdventureNLearn ship):  
-   `powershell -File C:\AOS\ops\gates\Invoke-OpsecGate.ps1 -TargetClass public-suite -TargetPath C:\AOS\products\LPINsuite_v2`  
+2. Optional operator host OPSEC gate (if you maintain one)  
 3. Smoke `/jobsite` and `/claims`  
 4. Tag `public/vX.Y.Z` + GitHub Release notes  
-5. Log ship in host Working Document  
+5. Log ship in operator Working Document (if applicable)  
 
 **Never** set `VITE_LPIN_LAB_SCALE=1` on a public product deploy (D1).
 
@@ -44,7 +43,7 @@ Full 15‑minute portfolio densify is research-only. Forks that enable it accept
 
 - Real municipality demo catalogs  
 - Default IX-15M / ~285k streams  
-- Host dual-Z dependency  
+- Host-only dual-monitor scripts  
 - Operator skill chrome  
 - Secrets / `.env.lab`  
-- Raw `docs/test-runs/**` harness dumps (metrics reports OK)  
+- Raw harness `docs/test-runs/**` dumps (metrics reports OK)  
