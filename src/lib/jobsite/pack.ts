@@ -4,6 +4,7 @@
 
 import { sanitizeForPublicSurface } from "@/lib/integrity";
 import { newId } from "./domain";
+import { normalizeSiteGeo } from "./site-geo";
 import type { JobsitePack, Jobsite } from "./types";
 
 export const PACK_DISCLAIMER =
@@ -20,6 +21,7 @@ export function buildPack(jobsite: Jobsite): JobsitePack {
     jobsite: {
       ...jobsite,
       country: "US",
+      siteGeo: normalizeSiteGeo(jobsite.siteGeo),
       updatedAt: new Date().toISOString(),
     },
   };
@@ -117,6 +119,7 @@ export function parsePackJson(raw: string): { ok: true; jobsite: Jobsite } | { o
       typeof jobsiteRaw.materialsBudget === "number"
         ? jobsiteRaw.materialsBudget
         : undefined,
+    siteGeo: normalizeSiteGeo(jobsiteRaw.siteGeo),
   };
 
   return { ok: true, jobsite };
@@ -143,7 +146,6 @@ export function openPrintPacket(html: string, title: string): void {
   w.document.write(html);
   w.document.close();
   w.document.title = title;
-  // Give styles a tick to settle
   setTimeout(() => {
     try {
       w.focus();
@@ -170,6 +172,9 @@ export function buildMailtoHref(jobsite: Jobsite, body: string): string {
     ),
   );
   // Cap body so mailto stays usable on mobile
-  const capped = text.length > 1800 ? `${text.slice(0, 1800)}%0A%0A%5Btruncated — attach export pack for full board%5D` : text;
+  const capped =
+    text.length > 1800
+      ? `${text.slice(0, 1800)}%0A%0A%5Btruncated — attach export pack for full board%5D`
+      : text;
   return `mailto:?subject=${subject}&body=${capped}`;
 }

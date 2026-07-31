@@ -25,6 +25,7 @@ import type {
   DailyLogEntry,
   PunchItem,
   ChangeOrder,
+  SiteGeo,
 } from "./types";
 import {
   applyProjectIdentity,
@@ -38,6 +39,7 @@ import {
 import { createDemoJobsite } from "./demo";
 import { parsePackJson } from "./pack";
 import { applyIndustryTemplate } from "./apply-template";
+import { normalizeSiteGeo } from "./site-geo";
 
 interface JobsiteState {
   jobsite: Jobsite;
@@ -49,6 +51,8 @@ interface JobsiteState {
   loadDemo: () => void;
   startNewProject: (identity?: Partial<ProjectIdentity>) => void;
   updateProject: (identity: ProjectIdentity) => void;
+  /** Replace or clear user site map geometry (never drives AHJ packs). */
+  setSiteGeo: (siteGeo: SiteGeo | undefined) => void;
   importJobsite: (jobsite: Jobsite) => void;
   importPackText: (
     raw: string,
@@ -207,6 +211,7 @@ function touch(jobsite: Jobsite): Jobsite {
     dailyLogs: jobsite.dailyLogs ?? [],
     punchList: jobsite.punchList ?? [],
     changeOrders: jobsite.changeOrders ?? [],
+    siteGeo: normalizeSiteGeo(jobsite.siteGeo),
     updatedAt: new Date().toISOString(),
   };
 }
@@ -239,6 +244,7 @@ function migrateJobsite(raw: unknown): Jobsite {
     industry: j.industry,
     projectStartDate: j.projectStartDate,
     materialsBudget: j.materialsBudget,
+    siteGeo: normalizeSiteGeo(j.siteGeo),
   };
 }
 
@@ -302,6 +308,17 @@ export const useJobsiteStore = create<JobsiteState>()(
       updateProject: (identity) => {
         const jobsite = get().jobsite;
         set({ jobsite: applyProjectIdentity(jobsite, identity) });
+      },
+
+      setSiteGeo: (siteGeo) => {
+        const jobsite = get().jobsite;
+        set({
+          jobsite: touch({
+            ...jobsite,
+            siteGeo: normalizeSiteGeo(siteGeo),
+            isDemo: false,
+          }),
+        });
       },
 
       importJobsite: (jobsite) =>
@@ -1007,7 +1024,7 @@ export const useJobsiteStore = create<JobsiteState>()(
     }),
     {
       name: "lpin-jobsite-v1",
-      version: 6,
+      version: 7,
       migrate: (persisted) => {
         const p = (persisted ?? {}) as {
           jobsite?: unknown;

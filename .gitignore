@@ -38,6 +38,7 @@ AGENTS.md
 artifacts/
 attachments/
 .node_modules.lock
+.project_id
 
 # Local agent QA dumps (keep product demo shots if explicitly added)
 screenshots/*

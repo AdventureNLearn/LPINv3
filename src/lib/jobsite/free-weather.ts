@@ -13,6 +13,12 @@ export interface JobsiteWeather {
   fetchedAt: string;
 }
 
+export interface GeocodeHit {
+  label: string;
+  lat: number;
+  lon: number;
+}
+
 function weatherCodeSummary(code: number): string {
   if (code === 0) return "Clear";
   if (code <= 3) return "Partly cloudy";
@@ -26,11 +32,9 @@ function weatherCodeSummary(code: number): string {
   return "Mixed conditions";
 }
 
-/** Geocode a free-text US city/state via Open-Meteo geocoding. */
-export async function fetchJobsiteWeather(
-  cityState: string,
-): Promise<JobsiteWeather | null> {
-  const q = cityState.trim();
+/** Geocode free-text (user-driven only — never ships place catalogs). */
+export async function geocodePlace(query: string): Promise<GeocodeHit | null> {
+  const q = query.trim();
   if (!q) return null;
   try {
     const geoUrl =
@@ -39,13 +43,34 @@ export async function fetchJobsiteWeather(
     const geoRes = await fetch(geoUrl);
     if (!geoRes.ok) return null;
     const geo = (await geoRes.json()) as {
-      results?: { name: string; admin1?: string; latitude: number; longitude: number }[];
+      results?: {
+        name: string;
+        admin1?: string;
+        latitude: number;
+        longitude: number;
+      }[];
     };
     const hit = geo.results?.[0];
     if (!hit) return null;
+    return {
+      label: [hit.name, hit.admin1].filter(Boolean).join(", "),
+      lat: hit.latitude,
+      lon: hit.longitude,
+    };
+  } catch {
+    return null;
+  }
+}
 
+/** Geocode a free-text US city/state via Open-Meteo geocoding. */
+export async function fetchJobsiteWeather(
+  cityState: string,
+): Promise<JobsiteWeather | null> {
+  const hit = await geocodePlace(cityState);
+  if (!hit) return null;
+  try {
     const wxUrl =
-      `https://api.open-meteo.com/v1/forecast?latitude=${hit.latitude}&longitude=${hit.longitude}` +
+      `https://api.open-meteo.com/v1/forecast?latitude=${hit.lat}&longitude=${hit.lon}` +
       "&current=temperature_2m,precipitation_probability,weather_code,wind_speed_10m" +
       "&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto";
     const wxRes = await fetch(wxUrl);
@@ -62,7 +87,7 @@ export async function fetchJobsiteWeather(
     if (!c || c.temperature_2m == null) return null;
     const code = c.weather_code ?? 0;
     return {
-      label: [hit.name, hit.admin1].filter(Boolean).join(", "),
+      label: hit.label,
       tempF: Math.round(c.temperature_2m),
       windMph: Math.round(c.wind_speed_10m ?? 0),
       precipProb: Math.round(c.precipitation_probability ?? 0),

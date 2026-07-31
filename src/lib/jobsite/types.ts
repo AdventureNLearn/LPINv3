@@ -258,6 +258,53 @@ export interface MaterialLine {
   updatedAt: string;
 }
 
+/** User-owned site geometry — never drives AHJ pack resolution. */
+export type SiteLayerKind =
+  | "site_boundary"
+  | "flood"
+  | "utility"
+  | "access"
+  | "other";
+
+export type SiteLayerSource = "user_draw" | "user_import" | "user_pin";
+
+/** Minimal GeoJSON FeatureCollection (device-local). */
+export interface SiteGeoJsonFeature {
+  type: "Feature";
+  properties?: Record<string, unknown> | null;
+  geometry: {
+    type: string;
+    coordinates: unknown;
+  };
+}
+
+export interface SiteGeoJsonCollection {
+  type: "FeatureCollection";
+  features: SiteGeoJsonFeature[];
+}
+
+export interface SiteLayer {
+  id: string;
+  kind: SiteLayerKind;
+  /** User label only — never a catalog city key */
+  label: string;
+  source: SiteLayerSource;
+  geojson: SiteGeoJsonCollection;
+}
+
+/**
+ * Device-local map pin + layers.
+ * State still owns AHJ packs; this never overrides resolveAhjCodePack.
+ */
+export interface SiteGeo {
+  version: 1;
+  pin?: { lat: number; lon: number };
+  zoom?: number;
+  layers: SiteLayer[];
+  /** Last user locate query (freeform) — optional, not used for codes */
+  locateQuery?: string;
+}
+
 export interface Jobsite {
   id: string;
   name: string;
@@ -277,6 +324,8 @@ export interface Jobsite {
   projectStartDate?: string;
   /** Contract budget ceiling for materials (optional USD) */
   materialsBudget?: number;
+  /** Optional user pin + imported/drawn layers (device-local) */
+  siteGeo?: SiteGeo;
   reports: FieldReport[];
   messages: AuthorityMessage[];
   inspections: Inspection[];
@@ -357,6 +406,23 @@ export interface JobsitePack {
   productRegion: "US";
   disclaimer: string;
   jobsite: Jobsite;
+}
+
+/** Geometry-focused handoff for GeoLibre / site GIS tools */
+export interface SitePack {
+  format: "lpin-site-pack";
+  version: 1;
+  exportedAt: string;
+  app: "lpin-jobsite";
+  productRegion: "US";
+  disclaimer: string;
+  /** Project labels for context only — not AHJ keys */
+  project?: {
+    name?: string;
+    stateCode?: string;
+    placeLabel?: string;
+  };
+  siteGeo: SiteGeo;
 }
 
 export interface GanttBar {

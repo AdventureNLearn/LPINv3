@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import {
   Camera,
   Download,
@@ -52,6 +52,13 @@ import {
 } from "@/lib/jobsite/jurisdiction-packs";
 import { todayYmd } from "@/lib/jobsite/gantt";
 import { cn } from "@/lib/utils";
+
+const SiteMapPanel = lazy(() =>
+  import("@/components/jobsite/SiteMapPanel").then((m) => ({
+    default: m.SiteMapPanel,
+  })),
+);
+
 
 export function UsScopeBanner({ compact }: { compact?: boolean }) {
   return (
@@ -546,6 +553,16 @@ export function ProjectView() {
           Save jobsite on this device
         </Button>
       </section>
+
+      <Suspense
+        fallback={
+          <section className="card-lpin rounded-2xl p-4 sm:p-6">
+            <p className="text-xs text-fg-muted">Loading site map…</p>
+          </section>
+        }
+      >
+        <SiteMapPanel />
+      </Suspense>
 
       {(() => {
         // Live panel follows the form State only — city/permit freeform never override.
