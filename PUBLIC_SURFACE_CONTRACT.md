@@ -48,7 +48,7 @@ Do **not** put in UI, share packs, meta description, samples, or footers:
 
 - Religious identity tokens or creeds (e.g. confessional slogans)
 - Political campaign slogans or party framing
-- Operator skill brand names as product chrome (`evidence-gate`, `shatter-protocol`, `mission-spine-guard`, `sovereign-lens`, agent IDs, 🐸 SHATTER, Frog Protocol)
+- Operator skill brand names as product chrome (private tool codenames, agent IDs, ritual slogans — see `src/lib/integrity/contract.ts` denylist)
 - “Automated truth,” legal advice claims, or full national permit-database claims
 
 Operator skills may still use their own language **in SuperGrok private work**. Before anything ships to product, apply:
