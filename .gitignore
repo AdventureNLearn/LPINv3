@@ -48,3 +48,8 @@ screenshots/*
 
 # Sandbox helpers
 startup.sh
+
+# Local sandbox only
+archives/
+attachments/
+screenshots/
