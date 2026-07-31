@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "NC",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "NC",
+    "typicalCycleYears": 3,
+    "modelBase": "North Carolina Building / Residential Codes (I-Codes based)",
+    "nextExpectedWindow": "Statewide codes with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "North Carolina maintains statewide codes with local enforcement; residential review cycles have lengthened in recent years.",
+      "Confirm the current edition with the local department."
+    ],
+    "sourceHint": "NC DOI / local AHJ"
+  },
+  "modelCodes": [
+    "North Carolina Building Code",
+    "North Carolina Residential Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for North Carolina \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

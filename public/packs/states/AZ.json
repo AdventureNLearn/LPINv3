@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "AZ",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "AZ",
+    "typicalCycleYears": null,
+    "modelBase": "Local adoption of model codes",
+    "nextExpectedWindow": "Local only \u2014 varies by municipality",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Arizona is primarily local adoption for private construction.",
+      "Confirm the city or county adopted edition and amendments."
+    ],
+    "sourceHint": "Local municipal / county building department"
+  },
+  "modelCodes": [
+    "IBC / IRC as adopted locally",
+    "NEC",
+    "IMC / IPC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Arizona \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

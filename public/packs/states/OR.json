@@ -1,0 +1,30 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "OR",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "OR",
+    "typicalCycleYears": 3,
+    "modelBase": "Oregon Structural Specialty Code / Residential Specialty Code",
+    "nextExpectedWindow": "Statewide specialty codes with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Oregon maintains statewide specialty codes with local administration.",
+      "Energy and seismic paths are frequently material.",
+      "Confirm the current edition with the local department."
+    ],
+    "sourceHint": "Building Codes Division / local AHJ"
+  },
+  "modelCodes": [
+    "Oregon Structural Specialty Code",
+    "Oregon Residential Specialty Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Oregon \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "ME",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "ME",
+    "typicalCycleYears": 3,
+    "modelBase": "Maine Uniform Building and Energy Code (MUBEC)",
+    "nextExpectedWindow": "Statewide MUBEC with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Maine maintains MUBEC with local administration (some municipality size rules apply historically).",
+      "Confirm the current edition and local enforcement status."
+    ],
+    "sourceHint": "State / local AHJ"
+  },
+  "modelCodes": [
+    "Maine Uniform Building and Energy Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Maine \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

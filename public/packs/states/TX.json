@@ -1,0 +1,32 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "TX",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "TX",
+    "typicalCycleYears": null,
+    "modelBase": "Local adoption of IBC / IRC / NEC (no single statewide building code for all cities)",
+    "nextExpectedWindow": "Local only \u2014 varies by municipality",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Texas does not impose one statewide building code on all cities.",
+      "Municipal and county adoptions and amendment calendars differ.",
+      "Treat any state-level note as a pointer \u2014 confirm the local adopted edition."
+    ],
+    "sourceHint": "Local municipal / county building department"
+  },
+  "modelCodes": [
+    "IBC / IRC as adopted locally",
+    "NEC",
+    "IPC / IMC",
+    "IFC / NFPA as adopted",
+    "Texas Accessibility Standards (where applicable)"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Texas \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "WV",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "WV",
+    "typicalCycleYears": 3,
+    "modelBase": "West Virginia State Building Code",
+    "nextExpectedWindow": "Statewide code cycle with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "West Virginia maintains a statewide building code with local administration.",
+      "Confirm the current edition with the local department."
+    ],
+    "sourceHint": "State Fire Marshal / local AHJ"
+  },
+  "modelCodes": [
+    "West Virginia State Building Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for West Virginia \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

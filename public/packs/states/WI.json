@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "WI",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "WI",
+    "typicalCycleYears": 3,
+    "modelBase": "Wisconsin Commercial Building Code / Uniform Dwelling Code",
+    "nextExpectedWindow": "Statewide code paths with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Wisconsin maintains statewide commercial and dwelling code paths with local administration.",
+      "Confirm the current edition with the local department."
+    ],
+    "sourceHint": "DSPS / local AHJ"
+  },
+  "modelCodes": [
+    "Wisconsin Commercial Building Code",
+    "Uniform Dwelling Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Wisconsin \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

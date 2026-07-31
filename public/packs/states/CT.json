@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "CT",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "CT",
+    "typicalCycleYears": 3,
+    "modelBase": "Connecticut State Building Code (I-Codes based)",
+    "nextExpectedWindow": "Statewide code cycle with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Connecticut maintains a statewide building code with local administration.",
+      "Confirm the current edition and any local amendments."
+    ],
+    "sourceHint": "Office of the State Building Inspector / local AHJ"
+  },
+  "modelCodes": [
+    "Connecticut State Building Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Connecticut \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

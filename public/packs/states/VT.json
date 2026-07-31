@@ -1,0 +1,30 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "VT",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "VT",
+    "typicalCycleYears": 3,
+    "modelBase": "Vermont Fire & Building Safety Code / energy paths",
+    "nextExpectedWindow": "Statewide code paths with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Vermont maintains statewide fire and building safety code paths with local administration.",
+      "Energy paths are frequently material.",
+      "Confirm the current edition with the local AHJ."
+    ],
+    "sourceHint": "Division of Fire Safety / local AHJ"
+  },
+  "modelCodes": [
+    "Vermont Fire & Building Safety Code",
+    "Energy code as adopted",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Vermont \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

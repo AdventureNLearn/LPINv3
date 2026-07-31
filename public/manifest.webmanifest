@@ -1,0 +1,25 @@
+{
+  "name": "LPIN Suite",
+  "short_name": "LPIN Suite",
+  "description": "LPIN Suite — Claims and Jobsite boards. United States first. Open packs. Data stays on your device.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060e16",
+  "theme_color": "#060e16",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/lpin/brand-icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/lpin/mark-lpin-sq.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

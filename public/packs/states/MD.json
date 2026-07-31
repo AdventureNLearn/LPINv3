@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "MD",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "MD",
+    "typicalCycleYears": 3,
+    "modelBase": "Maryland Building Performance Standards (based on I-Codes)",
+    "nextExpectedWindow": "Statewide standards with local admin",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Maryland publishes statewide building performance standards with local administration and amendments.",
+      "Confirm adopted edition and local amendments with the AHJ."
+    ],
+    "sourceHint": "State / local AHJ"
+  },
+  "modelCodes": [
+    "Maryland Building Performance Standards",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Maryland \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

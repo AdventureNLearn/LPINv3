@@ -1,0 +1,262 @@
+{
+  "format": "lpin-jurisdiction-manifest",
+  "version": 1,
+  "generatedAt": "2026-07-31T10:51:13Z",
+  "packs": [
+    {
+      "stateCode": "AK",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/AK.json"
+    },
+    {
+      "stateCode": "AL",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/AL.json"
+    },
+    {
+      "stateCode": "AR",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/AR.json"
+    },
+    {
+      "stateCode": "AZ",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/AZ.json"
+    },
+    {
+      "stateCode": "CA",
+      "packVersion": "1.0.3",
+      "path": "/packs/states/CA.json"
+    },
+    {
+      "stateCode": "CO",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/CO.json"
+    },
+    {
+      "stateCode": "CT",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/CT.json"
+    },
+    {
+      "stateCode": "DC",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/DC.json"
+    },
+    {
+      "stateCode": "DE",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/DE.json"
+    },
+    {
+      "stateCode": "FL",
+      "packVersion": "1.1.1",
+      "path": "/packs/states/FL.json"
+    },
+    {
+      "stateCode": "GA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/GA.json"
+    },
+    {
+      "stateCode": "HI",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/HI.json"
+    },
+    {
+      "stateCode": "IA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/IA.json"
+    },
+    {
+      "stateCode": "ID",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/ID.json"
+    },
+    {
+      "stateCode": "IL",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/IL.json"
+    },
+    {
+      "stateCode": "IN",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/IN.json"
+    },
+    {
+      "stateCode": "KS",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/KS.json"
+    },
+    {
+      "stateCode": "KY",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/KY.json"
+    },
+    {
+      "stateCode": "LA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/LA.json"
+    },
+    {
+      "stateCode": "MA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MA.json"
+    },
+    {
+      "stateCode": "MD",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MD.json"
+    },
+    {
+      "stateCode": "ME",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/ME.json"
+    },
+    {
+      "stateCode": "MI",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MI.json"
+    },
+    {
+      "stateCode": "MN",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MN.json"
+    },
+    {
+      "stateCode": "MO",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MO.json"
+    },
+    {
+      "stateCode": "MS",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MS.json"
+    },
+    {
+      "stateCode": "MT",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/MT.json"
+    },
+    {
+      "stateCode": "NC",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NC.json"
+    },
+    {
+      "stateCode": "ND",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/ND.json"
+    },
+    {
+      "stateCode": "NE",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NE.json"
+    },
+    {
+      "stateCode": "NH",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NH.json"
+    },
+    {
+      "stateCode": "NJ",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NJ.json"
+    },
+    {
+      "stateCode": "NM",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NM.json"
+    },
+    {
+      "stateCode": "NV",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NV.json"
+    },
+    {
+      "stateCode": "NY",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/NY.json"
+    },
+    {
+      "stateCode": "OH",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/OH.json"
+    },
+    {
+      "stateCode": "OK",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/OK.json"
+    },
+    {
+      "stateCode": "OR",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/OR.json"
+    },
+    {
+      "stateCode": "PA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/PA.json"
+    },
+    {
+      "stateCode": "RI",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/RI.json"
+    },
+    {
+      "stateCode": "SC",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/SC.json"
+    },
+    {
+      "stateCode": "SD",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/SD.json"
+    },
+    {
+      "stateCode": "TN",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/TN.json"
+    },
+    {
+      "stateCode": "TX",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/TX.json"
+    },
+    {
+      "stateCode": "UT",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/UT.json"
+    },
+    {
+      "stateCode": "VA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/VA.json"
+    },
+    {
+      "stateCode": "VT",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/VT.json"
+    },
+    {
+      "stateCode": "WA",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/WA.json"
+    },
+    {
+      "stateCode": "WI",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/WI.json"
+    },
+    {
+      "stateCode": "WV",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/WV.json"
+    },
+    {
+      "stateCode": "WY",
+      "packVersion": "1.0.0",
+      "path": "/packs/states/WY.json"
+    }
+  ]
+}

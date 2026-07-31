@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "PA",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "PA",
+    "typicalCycleYears": 3,
+    "modelBase": "Pennsylvania Uniform Construction Code (UCC)",
+    "nextExpectedWindow": "UCC cycle; some municipalities opt out or amend",
+    "packVersion": "1.0.0",
+    "notes": [
+      "UCC is the statewide framework; local enforcement and limited opt-outs exist.",
+      "Confirm enforcement status and edition with the local code official."
+    ],
+    "sourceHint": "Labor & Industry / local code official"
+  },
+  "modelCodes": [
+    "Pennsylvania Uniform Construction Code (UCC)",
+    "NEC as adopted under UCC"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Pennsylvania \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

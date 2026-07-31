@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "MN",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "MN",
+    "typicalCycleYears": 3,
+    "modelBase": "Minnesota State Building Code",
+    "nextExpectedWindow": "Statewide code cycle with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Minnesota maintains a statewide building code with local administration.",
+      "Cold-climate energy and envelope paths are frequently material.",
+      "Confirm the current edition with the AHJ."
+    ],
+    "sourceHint": "Department of Labor and Industry / local AHJ"
+  },
+  "modelCodes": [
+    "Minnesota State Building Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Minnesota \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

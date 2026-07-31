@@ -1,0 +1,33 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "CA",
+  "packVersion": "1.0.3",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "CA",
+    "typicalCycleYears": 3,
+    "modelBase": "California Building Standards Code (Title 24) \u2014 2025 edition",
+    "nextExpectedWindow": "Residential code changes largely paused through ~June 2031 (except emergencies / wildfire mitigation)",
+    "packVersion": "1.0.3",
+    "notes": [
+      "California uses statewide Title 24 with local administration and amendments.",
+      "Recent legislation paused most residential code changes through approximately June 2031.",
+      "Always verify current Title 24 parts and local amendments with the AHJ."
+    ],
+    "sourceHint": "California Building Standards Commission",
+    "lastKnownEffective": "2026-01-01"
+  },
+  "modelCodes": [
+    "California Building Code (CBC) \u2014 based on IBC",
+    "California Residential Code",
+    "California Electrical Code (based on NEC)",
+    "California Energy Code (Title 24, Part 6)",
+    "California Fire Code"
+  ],
+  "notes": [
+    "Refreshable guidance pack for California \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

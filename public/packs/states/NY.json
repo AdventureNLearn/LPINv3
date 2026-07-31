@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "NY",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "NY",
+    "typicalCycleYears": 3,
+    "modelBase": "NYS Uniform Code (statewide framework)",
+    "nextExpectedWindow": "State update cycle; some large municipalities differ",
+    "packVersion": "1.0.0",
+    "notes": [
+      "The Uniform Code is the statewide framework with local enforcement.",
+      "Some large municipalities maintain separate construction codes \u2014 confirm with the local AHJ."
+    ],
+    "sourceHint": "NYS Department of State / local code enforcement"
+  },
+  "modelCodes": [
+    "Uniform Code (NYS)",
+    "Energy Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for New York \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "KS",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "KS",
+    "typicalCycleYears": null,
+    "modelBase": "Local adoption of model codes",
+    "nextExpectedWindow": "Local only \u2014 varies by municipality",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Kansas is primarily local adoption for building codes.",
+      "Confirm the city or county adopted edition."
+    ],
+    "sourceHint": "Local municipal / county AHJ"
+  },
+  "modelCodes": [
+    "IBC / IRC as adopted locally",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Kansas \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

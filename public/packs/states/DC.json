@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "DC",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "DC",
+    "typicalCycleYears": 3,
+    "modelBase": "DC Construction Codes",
+    "nextExpectedWindow": "District code update cycle under DCRA",
+    "packVersion": "1.0.0",
+    "notes": [
+      "The District maintains its own construction codes under DCRA administration.",
+      "Confirm the current edition with DCRA / the permit office."
+    ],
+    "sourceHint": "DC Department of Buildings / DCRA"
+  },
+  "modelCodes": [
+    "DC Construction Codes",
+    "NEC as adopted",
+    "Local fire rules"
+  ],
+  "notes": [
+    "Refreshable guidance pack for District of Columbia \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

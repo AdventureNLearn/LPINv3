@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.npm/
+.pnpm-store/
+
+# Build / framework caches
+dist/
+.output/
+.vinxi/
+.tanstack/
+.vercel/
+.nitro/
+.wxt/
+*.tsbuildinfo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+tmp/
+/tmp/
+
+# Editor
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Agent / platform (not part of the open app)
+.grok/
+AGENTS.md
+.artifacts/
+artifacts/
+attachments/
+.node_modules.lock
+
+# Local agent QA dumps (keep product demo shots if explicitly added)
+screenshots/*
+!screenshots/.gitkeep
+!screenshots/lpin-suite-home.png
+!screenshots/lpin-suite-jobsite.png
+!screenshots/lpin-suite-claims.png
+
+# Sandbox helpers
+startup.sh

@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "NH",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "NH",
+    "typicalCycleYears": 3,
+    "modelBase": "New Hampshire State Building Code",
+    "nextExpectedWindow": "Statewide code cycle with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "New Hampshire maintains a statewide building code with local administration.",
+      "Confirm the current edition with the local department."
+    ],
+    "sourceHint": "State Building Code Review Board / local AHJ"
+  },
+  "modelCodes": [
+    "New Hampshire State Building Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for New Hampshire \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

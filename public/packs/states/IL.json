@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "IL",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "IL",
+    "typicalCycleYears": null,
+    "modelBase": "Local adoption of model codes; some municipalities maintain distinct paths",
+    "nextExpectedWindow": "Local only \u2014 varies by municipality",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Most of Illinois is local adoption; some large municipalities maintain distinct code paths.",
+      "Confirm the municipal adopted edition and amendments."
+    ],
+    "sourceHint": "Local municipal AHJ"
+  },
+  "modelCodes": [
+    "IBC / IRC as adopted locally",
+    "NEC",
+    "Illinois Plumbing Code (where applicable)"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Illinois \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

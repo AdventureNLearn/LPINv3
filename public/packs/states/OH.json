@@ -1,0 +1,29 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "OH",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "OH",
+    "typicalCycleYears": 3,
+    "modelBase": "Ohio Building Code / Residential Code",
+    "nextExpectedWindow": "Statewide code cycle with local administration",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Ohio maintains statewide building and residential codes with local administration.",
+      "Confirm current editions and any local amendments."
+    ],
+    "sourceHint": "Board of Building Standards / local AHJ"
+  },
+  "modelCodes": [
+    "Ohio Building Code",
+    "Ohio Residential Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Ohio \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}

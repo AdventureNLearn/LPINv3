@@ -1,0 +1,36 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "FL",
+  "packVersion": "1.1.1",
+  "updatedAt": "2026-07-31T11:30:00Z",
+  "cycle": {
+    "stateCode": "FL",
+    "typicalCycleYears": 3,
+    "modelBase": "Florida Building Code (FBC) \u2014 8th Edition (2023), based on 2021 I-Codes",
+    "lastKnownEffective": "2023-12-31",
+    "nextExpectedWindow": "9th Edition (2026) Florida Building Commission process \u2014 confirm effective date printed on the permit / with the AHJ",
+    "packVersion": "1.1.1",
+    "notes": [
+      "Florida updates the statewide FBC through the Florida Building Commission on an approximately three-year cycle.",
+      "Local building departments administer permits and inspections under the FBC.",
+      "Where HVHZ applies, product-approval rules stack on top of the base FBC path \u2014 confirm with the local AHJ.",
+      "Always confirm the edition year and local administrative procedures before rough-in and envelope work."
+    ],
+    "sourceHint": "Florida Building Commission / local building department"
+  },
+  "modelCodes": [
+    "Florida Building Code (FBC) 8th Edition (2023) \u2014 Building",
+    "FBC Residential",
+    "FBC Existing Building",
+    "FBC Energy Conservation",
+    "NEC as adopted in the FBC",
+    "Florida Fire Prevention Code (FFPC)"
+  ],
+  "notes": [
+    "Gold-standard Florida guidance pack \u2014 field process, not a live code text.",
+    "Statewide FBC with local administration; type city/county freeform for your AHJ name.",
+    "Roof, openings, and product approvals are frequent coastal / HVHZ hold points.",
+    "Confirm the adopted edition and any local procedures with the building department."
+  ]
+}

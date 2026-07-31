@@ -1,0 +1,28 @@
+{
+  "format": "lpin-jurisdiction-pack",
+  "version": 1,
+  "stateCode": "UT",
+  "packVersion": "1.0.0",
+  "updatedAt": "2026-07-31T10:30:15Z",
+  "cycle": {
+    "stateCode": "UT",
+    "typicalCycleYears": 3,
+    "modelBase": "Utah State Construction Code (I-Codes based)",
+    "nextExpectedWindow": "Statewide construction code with local enforcement",
+    "packVersion": "1.0.0",
+    "notes": [
+      "Utah maintains a statewide construction code with local administration.",
+      "Confirm the current edition with the local department."
+    ],
+    "sourceHint": "Uniform Building Code Commission / local AHJ"
+  },
+  "modelCodes": [
+    "Utah State Construction Code",
+    "NEC as adopted"
+  ],
+  "notes": [
+    "Refreshable guidance pack for Utah \u2014 not a live code text.",
+    "Confirm the adopted edition and any local amendments with the AHJ.",
+    "County / municipal details stay freeform or user-side."
+  ]
+}
