@@ -1,0 +1,76 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "materials",
+  "label": "Materials / supply",
+  "short": "Mat",
+  "csiPrimary": ["01"],
+  "csiRelated": [],
+  "disclaimer": "LPIN materials / supply trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "mat-receive",
+      "label": "Receiving / laydown readiness",
+      "match": ["receiving", "delivery", "laydown"],
+      "items": [
+        {"id": "mr1", "text": "Delivery matched to PO / submittal"},
+        {"id": "mr2", "text": "Damage inspection complete"},
+        {"id": "mr3", "text": "Storage location and protection assigned"},
+        {"id": "mr4", "text": "Status updated on the board (on-order vs on-site)"}
+      ]
+    },
+    {
+      "id": "mat-issue",
+      "label": "Issue to trade readiness",
+      "match": ["issue", "release to trade"],
+      "items": [
+        {"id": "mi1", "text": "Correct material and quantity staged"},
+        {"id": "mi2", "text": "Trade notified and ready to accept"},
+        {"id": "mi3", "text": "Long-lead items flagged separately"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-mat-longlead",
+      "label": "Long-lead material status gate",
+      "blocksConcealment": false,
+      "inspectionMatch": ["long-lead", "material status"],
+      "clearedBy": "super",
+      "notes": "MaterialStatus mapping: distinguish on-order vs on-site. Critical path materials must be honest on the board."
+    }
+  ],
+  "materials": [],
+  "sequence": {
+    "dependsOnDivisions": [],
+    "blocksDivisions": [],
+    "typicalPhase": "Continuous — procurement through installation",
+    "notes": "Materials pack supports status tracking across trades. Wave 2: MaterialStatus mapping note."
+  },
+  "safetyPhrases": [
+    {"id": "sp-mat-status", "priority": "P1", "phrase": "Critical material shown as on-site when still on-order.", "category": "materials"},
+    {"id": "sp-mat-damage", "priority": "P1", "phrase": "Damaged material issued to trade without documentation.", "category": "materials"},
+    {"id": "sp-mat-short", "priority": "P2", "phrase": "Material short discovered only when trade is ready to install.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-mat-receive", "label": "Delivery condition", "examples": ["Truck load", "Damage", "Laydown area"]},
+    {"id": "ph-mat-stage", "label": "Staged for trade", "examples": ["Labeled pile", "Quantity check"]}
+  ],
+  "readinessCriteria": [
+    "Status honest (on-order vs on-site)",
+    "Damage documented",
+    "Trade has what it needs when it needs it",
+    "Long-lead items tracked separately"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately related to materials?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must be true before materials can be issued cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before a trade can rely on material status?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which material status gates are non-negotiable?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take for material condition and status?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When is material status actually ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
