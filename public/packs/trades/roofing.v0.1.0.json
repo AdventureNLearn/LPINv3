@@ -1,0 +1,102 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "roofing",
+  "label": "Roofing",
+  "short": "Roof",
+  "csiPrimary": ["07"],
+  "csiRelated": ["07 50 00", "07 60 00", "07 90 00"],
+  "disclaimer": "LPIN roofing trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "rf-deck",
+      "label": "Deck / substrate readiness",
+      "match": ["roof deck", "substrate", "sheathing"],
+      "items": [
+        {"id": "rd1", "text": "Deck clean, dry, and secured"},
+        {"id": "rd2", "text": "Slopes and drains verified"},
+        {"id": "rd3", "text": "Penetrations framed and ready"},
+        {"id": "rd4", "text": "Edge metal / nailers set"}
+      ]
+    },
+    {
+      "id": "rf-dryin",
+      "label": "Dry-in / underlayment readiness",
+      "match": ["dry-in", "underlayment", "ice and water"],
+      "items": [
+        {"id": "ri1", "text": "Underlayment continuous and lapped correctly"},
+        {"id": "ri2", "text": "Valleys and penetrations detailed"},
+        {"id": "ri3", "text": "Temporary weather protection in place"},
+        {"id": "ri4", "text": "No active leaks into the building"}
+      ]
+    },
+    {
+      "id": "rf-final",
+      "label": "Final roofing readiness",
+      "match": ["final roof", "membrane", "shingles"],
+      "items": [
+        {"id": "rf1", "text": "Field membrane / covering complete"},
+        {"id": "rf2", "text": "Flashings and counter-flashings complete"},
+        {"id": "rf3", "text": "Termination bars and sealants complete"},
+        {"id": "rf4", "text": "Drains and overflow functional"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-rf-deck",
+      "label": "Deck acceptance before roofing",
+      "blocksConcealment": true,
+      "inspectionMatch": ["roof deck"],
+      "clearedBy": "super"
+    },
+    {
+      "id": "hp-rf-dryin",
+      "label": "Dry-in before interior finishes rely on it",
+      "blocksConcealment": false,
+      "inspectionMatch": ["dry-in"],
+      "clearedBy": "either",
+      "notes": "Dry-in ≠ final. Building can still take water until final is complete and accepted."
+    }
+  ],
+  "materials": [
+    {"name": "Underlayment / ice & water shield", "unit": "sq", "qtyRequired": 80, "unitCost": 45},
+    {"name": "Roof membrane / shingles (job-spec)", "unit": "sq", "qtyRequired": 80, "unitCost": 180},
+    {"name": "Flashings and edge metal", "unit": "lf", "qtyRequired": 400, "unitCost": 12},
+    {"name": "Sealants and terminations", "unit": "ls", "qtyRequired": 1, "unitCost": 600}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["carpentry", "steel", "concrete"],
+    "blocksDivisions": ["mechanical", "electrical", "drywall"],
+    "typicalPhase": "After structure and deck; before interior finishes that cannot tolerate water",
+    "notes": "Dry-in ≠ final. Wave 2: keep the distinction explicit so supers do not release interiors prematurely."
+  },
+  "safetyPhrases": [
+    {"id": "sp-rf-fall", "priority": "P0", "phrase": "Roof edge without fall protection or warning line system.", "category": "safety"},
+    {"id": "sp-rf-water", "priority": "P0", "phrase": "Active water intrusion into the building after dry-in claimed.", "category": "safety"},
+    {"id": "sp-rf-dryin", "priority": "P1", "phrase": "Interior finishes started while roof is only dry-in, not final.", "category": "inspection"},
+    {"id": "sp-rf-mat", "priority": "P2", "phrase": "Membrane or flashing short stops weather protection.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-rf-deck", "label": "Deck before underlayment", "examples": ["Overall deck", "Penetration", "Edge"]},
+    {"id": "ph-rf-dryin", "label": "Dry-in details", "requiredForHoldId": "hp-rf-dryin", "examples": ["Lap", "Valley", "Penetration flashing"]},
+    {"id": "ph-rf-final", "label": "Final terminations", "examples": ["Termination bar", "Drain", "Counter-flashing"]}
+  ],
+  "readinessCriteria": [
+    "Deck accepted and dry",
+    "Dry-in continuous and leak-free",
+    "Final flashings and terminations complete",
+    "Dry-in does not equal final acceptance"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a roofing job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before roofing work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
