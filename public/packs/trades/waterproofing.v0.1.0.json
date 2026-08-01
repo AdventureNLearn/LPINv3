@@ -1,0 +1,86 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "waterproofing",
+  "label": "Waterproofing",
+  "short": "WP",
+  "csiPrimary": ["07"],
+  "csiRelated": ["07 10 00", "07 13 00"],
+  "disclaimer": "LPIN waterproofing trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "wp-prep",
+      "label": "Substrate / prep readiness",
+      "match": ["waterproofing prep", "substrate"],
+      "items": [
+        {"id": "wp1", "text": "Substrate clean, dry, and sound"},
+        {"id": "wp2", "text": "Penetrations and joints detailed"},
+        {"id": "wp3", "text": "Drainage and protection board ready"}
+      ]
+    },
+    {
+      "id": "wp-apply",
+      "label": "Membrane application readiness",
+      "match": ["membrane", "waterproofing"],
+      "items": [
+        {"id": "wa1", "text": "Membrane installed per manufacturer"},
+        {"id": "wa2", "text": "Seams and details complete"},
+        {"id": "wa3", "text": "Protection layer in place before backfill"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-wp-prep",
+      "label": "Substrate inspection before membrane",
+      "blocksConcealment": true,
+      "inspectionMatch": ["waterproofing"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-wp-final",
+      "label": "Waterproofing complete before backfill",
+      "blocksConcealment": true,
+      "inspectionMatch": ["waterproofing final"],
+      "clearedBy": "inspector",
+      "notes": "Backfill coordination critical."
+    }
+  ],
+  "materials": [
+    {"name": "Waterproofing membrane", "unit": "sf", "qtyRequired": 4000, "unitCost": 2.8},
+    {"name": "Protection board", "unit": "sf", "qtyRequired": 4000, "unitCost": 1.2},
+    {"name": "Drainage composite", "unit": "sf", "qtyRequired": 3500, "unitCost": 1.5},
+    {"name": "Detail sealants / flashings", "unit": "ls", "qtyRequired": 1, "unitCost": 800}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["concrete", "foundation"],
+    "blocksDivisions": ["backfill", "sitework"],
+    "typicalPhase": "After foundation walls; before backfill",
+    "notes": "Backfill coordination. Wave deltas applied."
+  },
+  "safetyPhrases": [
+    {"id": "sp-wp-cover", "priority": "P0", "phrase": "Backfilling over waterproofing before inspection clear.", "category": "inspection"},
+    {"id": "sp-wp-substrate", "priority": "P1", "phrase": "Membrane on wet or contaminated substrate.", "category": "inspection"}
+  ],
+  "photoSets": [
+    {"id": "ph-wp-prep", "label": "Substrate before membrane", "requiredForHoldId": "hp-wp-prep", "examples": ["Wall surface", "Penetration", "Joint"]},
+    {"id": "ph-wp-membrane", "label": "Completed membrane", "requiredForHoldId": "hp-wp-final", "examples": ["Overall wall", "Detail", "Protection board"]}
+  ],
+  "readinessCriteria": [
+    "Substrate clean and dry",
+    "Details and penetrations complete",
+    "Membrane and protection installed",
+    "Inspection clear before backfill"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a waterproofing job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before waterproofing work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
