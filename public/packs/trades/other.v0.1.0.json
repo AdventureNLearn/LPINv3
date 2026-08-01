@@ -6,59 +6,132 @@
   "division": "other",
   "label": "Other",
   "short": "Other",
-  "csiPrimary": ["00"],
+  "csiPrimary": [
+    "00"
+  ],
   "csiRelated": [],
-  "disclaimer": "LPIN other / miscellaneous trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "disclaimer": "LPIN other trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
   "checklists": [
     {
-      "id": "ot-general",
-      "label": "Miscellaneous scope readiness",
-      "match": ["other", "misc", "specialty"],
+      "id": "oth-generic",
+      "label": "Specialty scope readiness",
+      "match": [
+        "specialty",
+        "other trade"
+      ],
       "items": [
         {
-          "id": "ot1",
-          "text": "Scope clearly defined and documented"
+          "id": "og1",
+          "text": "Scope and drawings for this specialty on site"
         },
         {
-          "id": "ot2",
-          "text": "Prior trade handoffs complete"
+          "id": "og2",
+          "text": "Interfaces with adjacent trades listed"
         },
         {
-          "id": "ot3",
-          "text": "Inspection points accessible"
+          "id": "og3",
+          "text": "Inspection or owner review needs known"
+        },
+        {
+          "id": "og4",
+          "text": "Safe access and housekeeping acceptable"
         }
       ]
     }
   ],
   "holdPoints": [
     {
-      "id": "hp-ot-clear",
-      "label": "Specialty / other scope clear before cover",
+      "id": "hp-oth-interface",
+      "label": "Interface with adjacent trade before cover",
       "blocksConcealment": true,
-      "inspectionMatch": ["other", "specialty"],
-      "clearedBy": "either"
+      "inspectionMatch": [
+        "specialty"
+      ],
+      "clearedBy": "super"
     }
   ],
-  "materials": [],
+  "materials": [
+    {
+      "name": "Specialty materials (define per job)",
+      "unit": "ls",
+      "qtyRequired": 1,
+      "unitCost": 0,
+      "specNote": "Replace with job-specific lines when scope is known."
+    }
+  ],
   "sequence": {
-    "dependsOnDivisions": [],
+    "dependsOnDivisions": [
+      "general"
+    ],
     "blocksDivisions": [],
-    "typicalPhase": "As required by specific scope",
-    "notes": "Stub pack. Promote recurring scopes into dedicated packs when they appear repeatedly."
+    "typicalPhase": "As defined by specialty scope",
+    "notes": "Catch-all division — prefer promoting recurring scopes into a real TradeDivision pack. Wave 2: stub pack — promote recurring specialty scopes into dedicated TradeDivision packs."
   },
   "safetyPhrases": [
     {
-      "id": "sp-ot-1",
+      "id": "sp-oth-unknown",
       "priority": "P1",
-      "phrase": "Undefined specialty scope proceeding without documented sequence.",
+      "phrase": "Specialty work started without scope/interface clarity on the board.",
+      "category": "other"
+    },
+    {
+      "id": "sp-oth-cover",
+      "priority": "P1",
+      "phrase": "Covering specialty work before required review.",
       "category": "inspection"
     }
   ],
-  "photoSets": [],
-  "readinessCriteria": [
-    "Scope defined",
-    "Handoffs clear",
-    "Inspection accessible"
+  "photoSets": [
+    {
+      "id": "ph-oth-scope",
+      "label": "Specialty condition",
+      "examples": [
+        "Overall area",
+        "Interface detail",
+        "Label/nameplate"
+      ]
+    }
   ],
-  "interviewSlots": []
+  "readinessCriteria": [
+    "Scope clear and interfaces named",
+    "Inspection needs known before conceal",
+    "Prefer graduating recurring work into a dedicated trade pack"
+  ],
+  "interviewSlots": [
+    {
+      "slotId": "p0_triggers",
+      "prompt": "What stops the crew immediately on a other job?",
+      "mapsTo": "safetyPhrases"
+    },
+    {
+      "slotId": "handoff_in",
+      "prompt": "What must prior trades hand you before other work starts cleanly?",
+      "mapsTo": "sequence"
+    },
+    {
+      "slotId": "handoff_out",
+      "prompt": "What must be clear before the next trade covers or depends on your work?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "hold_points",
+      "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "materials_pattern",
+      "prompt": "Which material lines most often delay your critical path?",
+      "mapsTo": "materials"
+    },
+    {
+      "slotId": "photo_proof",
+      "prompt": "What photos do you take so a remote super understands the condition?",
+      "mapsTo": "photoSets"
+    },
+    {
+      "slotId": "readiness",
+      "prompt": "When do you actually call inspection or declare ready — plain language?",
+      "mapsTo": "readinessCriteria"
+    }
+  ]
 }
