@@ -1,0 +1,102 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "mechanical",
+  "label": "Mechanical / HVAC",
+  "short": "Mech",
+  "csiPrimary": ["23"],
+  "csiRelated": ["23 05 00", "23 30 00", "23 70 00"],
+  "disclaimer": "LPIN mechanical / hvac trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "mech-duct",
+      "label": "Duct / rough mechanical readiness",
+      "match": ["duct", "rough mechanical", "hvac rough"],
+      "items": [
+        {"id": "md1", "text": "Duct layout matches drawings / coordination"},
+        {"id": "md2", "text": "Supports and hangers installed"},
+        {"id": "md3", "text": "Fire/smoke dampers accessible and labeled"},
+        {"id": "md4", "text": "Penetrations sleeved / firestopped as required"},
+        {"id": "md5", "text": "No premature cover of inspection points"}
+      ]
+    },
+    {
+      "id": "mech-equip",
+      "label": "Equipment readiness",
+      "match": ["ahu", "rtu", "equipment", "unit"],
+      "items": [
+        {"id": "me1", "text": "Pad / curb / structure ready"},
+        {"id": "me2", "text": "Clearances and service access verified"},
+        {"id": "me3", "text": "Power and control pathways staged"},
+        {"id": "me4", "text": "Nameplate and submittal match"}
+      ]
+    },
+    {
+      "id": "mech-final",
+      "label": "Final / start-up readiness",
+      "match": ["mechanical final", "start-up", "balancing"],
+      "items": [
+        {"id": "mf1", "text": "Filters installed; access doors operational"},
+        {"id": "mf2", "text": "Thermostats / controls functional"},
+        {"id": "mf3", "text": "Dampers accessible for inspection"},
+        {"id": "mf4", "text": "Prior rough holds cleared"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-mech-rough",
+      "label": "Mechanical rough before conceal",
+      "blocksConcealment": true,
+      "inspectionMatch": ["mechanical rough", "duct"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-mech-final",
+      "label": "Mechanical final / balancing",
+      "blocksConcealment": false,
+      "inspectionMatch": ["mechanical final", "start-up"],
+      "clearedBy": "either"
+    }
+  ],
+  "materials": [
+    {"name": "Duct sheet metal / flex allowance", "unit": "lb", "qtyRequired": 2000, "unitCost": 2.5},
+    {"name": "Fire / smoke dampers (job-spec)", "unit": "ea", "qtyRequired": 12, "unitCost": 350},
+    {"name": "Insulation (duct)", "unit": "sf", "qtyRequired": 3000, "unitCost": 1.8},
+    {"name": "Thermostats / sensors", "unit": "ea", "qtyRequired": 15, "unitCost": 85}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["carpentry", "steel", "concrete"],
+    "blocksDivisions": ["drywall", "ceiling", "paint"],
+    "typicalPhase": "Rough after structure; final after finishes",
+    "notes": "Damper accessibility is non-negotiable. Pre-rock coordination with electrical and plumbing. Wave 2: damper accessibility and pre-rock gate."
+  },
+  "safetyPhrases": [
+    {"id": "sp-mech-access", "priority": "P0", "phrase": "Working on energized or pressurized equipment without LOTO.", "category": "safety"},
+    {"id": "sp-mech-damper", "priority": "P1", "phrase": "Fire/smoke damper blocked or inaccessible after cover.", "category": "inspection"},
+    {"id": "sp-mech-cover", "priority": "P1", "phrase": "Drywall or ceiling started over open mechanical rough.", "category": "inspection"},
+    {"id": "sp-mech-mat", "priority": "P2", "phrase": "Long-lead equipment or damper short stops sequence.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-mech-rough", "label": "Duct / damper before cover", "requiredForHoldId": "hp-mech-rough", "examples": ["Damper with access", "Duct support", "Penetration"]},
+    {"id": "ph-mech-equip", "label": "Equipment set", "examples": ["Nameplate", "Clearance", "Curb"]},
+    {"id": "ph-mech-final", "label": "Final devices", "examples": ["Thermostat", "Access door", "Filter"]}
+  ],
+  "readinessCriteria": [
+    "Duct and dampers accessible for inspection",
+    "Equipment clearances verified",
+    "No cover over open rough",
+    "Controls and start-up path clear"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a mechanical / HVAC job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before mechanical work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
