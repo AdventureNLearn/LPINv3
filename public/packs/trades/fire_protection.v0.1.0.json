@@ -1,0 +1,98 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "fire_protection",
+  "label": "Fire protection",
+  "short": "Fire",
+  "csiPrimary": ["21"],
+  "csiRelated": ["21 13 00", "21 30 00"],
+  "disclaimer": "LPIN fire protection trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "fp-rough",
+      "label": "Rough / piping readiness",
+      "match": ["sprinkler rough", "fire rough", "piping"],
+      "items": [
+        {"id": "fr1", "text": "Pipe sizes and routing per design"},
+        {"id": "fr2", "text": "Hangers and seismic bracing installed"},
+        {"id": "fr3", "text": "Heads and escutcheons staged"},
+        {"id": "fr4", "text": "Inspection points accessible"}
+      ]
+    },
+    {
+      "id": "fp-hydro",
+      "label": "Hydro / test readiness",
+      "match": ["hydro", "pressure test", "test"],
+      "items": [
+        {"id": "fh1", "text": "System filled and pressurized"},
+        {"id": "fh2", "text": "Witness window coordinated"},
+        {"id": "fh3", "text": "Documentation ready"}
+      ]
+    },
+    {
+      "id": "fp-final",
+      "label": "Final / acceptance readiness",
+      "match": ["final", "acceptance"],
+      "items": [
+        {"id": "ff1", "text": "Heads and covers complete"},
+        {"id": "ff2", "text": "Signage and labels installed"},
+        {"id": "ff3", "text": "As-built and certs ready"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-fp-hydro",
+      "label": "Hydro / pressure test witness",
+      "blocksConcealment": true,
+      "inspectionMatch": ["hydro", "pressure test"],
+      "clearedBy": "inspector",
+      "notes": "Witness window readiness is critical."
+    },
+    {
+      "id": "hp-fp-final",
+      "label": "Final fire protection acceptance",
+      "blocksConcealment": false,
+      "inspectionMatch": ["fire final", "acceptance"],
+      "clearedBy": "inspector"
+    }
+  ],
+  "materials": [
+    {"name": "Sprinkler pipe (job-spec)", "unit": "ft", "qtyRequired": 800, "unitCost": 3.2},
+    {"name": "Heads / pendents", "unit": "ea", "qtyRequired": 120, "unitCost": 18},
+    {"name": "Hangers / seismic kits", "unit": "ea", "qtyRequired": 90, "unitCost": 12},
+    {"name": "Valves / fittings", "unit": "lot", "qtyRequired": 1, "unitCost": 450}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["carpentry", "steel", "mechanical"],
+    "blocksDivisions": ["drywall", "ceiling", "paint"],
+    "typicalPhase": "After structure, coordinated with MEP",
+    "notes": "Witness window for hydro is non-negotiable."
+  },
+  "safetyPhrases": [
+    {"id": "sp-fp-witness", "priority": "P0", "phrase": "Covering or proceeding past hydro without coordinated witness window.", "category": "inspection"},
+    {"id": "sp-fp-pressure", "priority": "P0", "phrase": "System under test without proper barricades or notice.", "category": "safety"},
+    {"id": "sp-fp-mat", "priority": "P2", "phrase": "Special heads or long-lead valves short stop sequence.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-fp-rough", "label": "Rough piping and hangers", "examples": ["Hanger spacing", "Seismic brace", "Head location"]},
+    {"id": "ph-fp-hydro", "label": "Hydro / test setup", "requiredForHoldId": "hp-fp-hydro", "examples": ["Gauge reading", "Witness present", "System status"]}
+  ],
+  "readinessCriteria": [
+    "Piping complete and supported",
+    "Witness window scheduled and open",
+    "Heads and devices staged or installed",
+    "Documentation ready for inspector"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a fire protection job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before fire protection work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
