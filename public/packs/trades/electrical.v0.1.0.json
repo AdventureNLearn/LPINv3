@@ -7,7 +7,7 @@
   "label": "Electrical",
   "short": "Elec",
   "csiPrimary": ["26"],
-  "csiRelated": ["26 05 00", "26 20 00", "26 50 00"],
+  "csiRelated": ["26 05 00", "26 27 00", "26 51 00"],
   "disclaimer": "LPIN electrical trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
   "checklists": [
     {
