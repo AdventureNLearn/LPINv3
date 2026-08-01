@@ -1,0 +1,82 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "drywall",
+  "label": "Drywall / interiors",
+  "short": "Drywall",
+  "csiPrimary": ["09"],
+  "csiRelated": ["09 29 00", "09 21 00"],
+  "disclaimer": "LPIN drywall / interiors trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "dw-pre-rock",
+      "label": "Pre-rock readiness",
+      "match": ["pre-rock", "pre rock", "before drywall"],
+      "items": [
+        {"id": "pr1", "text": "MEP rough complete and cleared"},
+        {"id": "pr2", "text": "Nail plates and blocking in place"},
+        {"id": "pr3", "text": "GC pre-rock walk complete (no verbal only)"},
+        {"id": "pr4", "text": "Inspection points still accessible"}
+      ]
+    },
+    {
+      "id": "dw-hang",
+      "label": "Hang / tape readiness",
+      "match": ["hang", "tape", "finish"],
+      "items": [
+        {"id": "dh1", "text": "Board type and thickness per schedule"},
+        {"id": "dh2", "text": "Fastening pattern correct"},
+        {"id": "dh3", "text": "Joints and corners ready for tape"},
+        {"id": "dh4", "text": "No covering of uncleared rough work"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-dw-pre-rock",
+      "label": "Pre-rock clear before hang",
+      "blocksConcealment": true,
+      "inspectionMatch": ["pre-rock", "MEP rough"],
+      "clearedBy": "super",
+      "notes": "Verbal pre-rock is invalid — documented clear required."
+    }
+  ],
+  "materials": [
+    {"name": "Drywall board (job-spec thickness)", "unit": "sheet", "qtyRequired": 200, "unitCost": 14},
+    {"name": "Joint compound", "unit": "pail", "qtyRequired": 12, "unitCost": 18},
+    {"name": "Tape / corner bead", "unit": "roll", "qtyRequired": 40, "unitCost": 6},
+    {"name": "Fasteners", "unit": "box", "qtyRequired": 15, "unitCost": 22}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["electrical", "plumbing", "mechanical", "carpentry"],
+    "blocksDivisions": ["paint", "flooring"],
+    "typicalPhase": "After MEP rough and pre-rock clear",
+    "notes": "Enforces GC pre-rock. Verbal clear is not accepted."
+  },
+  "safetyPhrases": [
+    {"id": "sp-dw-prerock", "priority": "P0", "phrase": "Hanging board over uncleared MEP rough or without documented pre-rock.", "category": "inspection"},
+    {"id": "sp-dw-dust", "priority": "P1", "phrase": "Dust control inadequate in occupied or adjacent spaces.", "category": "safety"},
+    {"id": "sp-dw-mat", "priority": "P2", "phrase": "Board type or thickness mismatch stops hang sequence.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-dw-prerock", "label": "Pre-rock condition", "requiredForHoldId": "hp-dw-pre-rock", "examples": ["MEP rough complete", "Nail plates", "Blocking", "Open inspection points"]},
+    {"id": "ph-dw-hang", "label": "Hang progress", "examples": ["Board fastening", "Joint condition", "Corner detail"]}
+  ],
+  "readinessCriteria": [
+    "MEP rough cleared and documented",
+    "Pre-rock walk complete (not verbal only)",
+    "Board and fasteners on site and correct",
+    "Inspection points still open until hang starts"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a drywall job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before drywall work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
