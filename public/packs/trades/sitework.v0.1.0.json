@@ -1,0 +1,114 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "sitework",
+  "label": "Sitework / civil",
+  "short": "Site",
+  "csiPrimary": ["31"],
+  "csiRelated": ["31 20 00", "32 10 00"],
+  "disclaimer": "LPIN sitework / civil trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "sw-subgrade",
+      "label": "Subgrade / excavation readiness",
+      "match": ["subgrade", "excavation", "cut fill"],
+      "items": [
+        {"id": "ss1", "text": "Subgrade elevation and compaction verified"},
+        {"id": "ss2", "text": "Proof roll or density tests complete"},
+        {"id": "ss3", "text": "Utilities located and protected"},
+        {"id": "ss4", "text": "SWPPP measures in place and maintained"}
+      ]
+    },
+    {
+      "id": "sw-base",
+      "label": "Base / aggregate readiness",
+      "match": ["base", "aggregate", "subbase"],
+      "items": [
+        {"id": "sb1", "text": "Base material placed and compacted"},
+        {"id": "sb2", "text": "Thickness and grade checked"},
+        {"id": "sb3", "text": "Drainage slopes correct"}
+      ]
+    },
+    {
+      "id": "sw-paving",
+      "label": "Paving / flatwork readiness",
+      "match": ["paving", "asphalt", "concrete flatwork"],
+      "items": [
+        {"id": "sp1", "text": "Forms and grade ready"},
+        {"id": "sp2", "text": "Reinforcement or fabric in place"},
+        {"id": "sp3", "text": "Weather and curing plan ready"}
+      ]
+    },
+    {
+      "id": "sw-swppp",
+      "label": "SWPPP continuous readiness",
+      "match": ["swppp", "erosion", "stormwater"],
+      "items": [
+        {"id": "sw1", "text": "BMPs installed and maintained"},
+        {"id": "sw2", "text": "Inspections current"},
+        {"id": "sw3", "text": "No sediment leaving site"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-sw-subgrade",
+      "label": "Subgrade inspection before base or foundations",
+      "blocksConcealment": true,
+      "inspectionMatch": ["subgrade", "excavation"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-sw-base",
+      "label": "Base inspection before paving",
+      "blocksConcealment": true,
+      "inspectionMatch": ["base", "aggregate"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-sw-final",
+      "label": "Final site / SWPPP clear",
+      "blocksConcealment": false,
+      "inspectionMatch": ["site final"],
+      "clearedBy": "either"
+    }
+  ],
+  "materials": [
+    {"name": "Aggregate base", "unit": "ton", "qtyRequired": 400, "unitCost": 28},
+    {"name": "Fill / select material", "unit": "cy", "qtyRequired": 800, "unitCost": 18},
+    {"name": "Geotextile fabric", "unit": "sy", "qtyRequired": 2000, "unitCost": 1.5},
+    {"name": "Erosion control materials", "unit": "ls", "qtyRequired": 1, "unitCost": 2500}
+  ],
+  "sequence": {
+    "dependsOnDivisions": [],
+    "blocksDivisions": ["concrete", "steel", "underground utilities"],
+    "typicalPhase": "First major trade; continuous SWPPP",
+    "notes": "SWPPP continuous; subgrade honesty. Wave deltas applied."
+  },
+  "safetyPhrases": [
+    {"id": "sp-sw-trench", "priority": "P0", "phrase": "Unprotected trench or excavation deeper than allowed without shoring.", "category": "safety"},
+    {"id": "sp-sw-swppp", "priority": "P1", "phrase": "SWPPP BMPs missing or failed after rain.", "category": "inspection"},
+    {"id": "sp-sw-subgrade", "priority": "P1", "phrase": "Covering subgrade before inspection or density clear.", "category": "inspection"}
+  ],
+  "photoSets": [
+    {"id": "ph-sw-subgrade", "label": "Subgrade condition", "requiredForHoldId": "hp-sw-subgrade", "examples": ["Proof roll", "Elevation", "Utility mark"]},
+    {"id": "ph-sw-bmp", "label": "SWPPP BMPs", "examples": ["Silt fence", "Inlet protection", "Stabilized entrance"]}
+  ],
+  "readinessCriteria": [
+    "Subgrade elevation and compaction verified",
+    "SWPPP BMPs active and maintained",
+    "Utilities located and protected",
+    "Base and paving ready only after prior clears"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a sitework job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before sitework starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
