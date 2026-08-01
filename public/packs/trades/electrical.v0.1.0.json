@@ -1,1 +1,126 @@
-PLACEHOLDER_WILL_BE_REPLACED_BY_FULL
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.2",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "electrical",
+  "label": "Electrical",
+  "short": "Elec",
+  "csiPrimary": ["26"],
+  "csiRelated": ["26 05 00", "26 20 00", "26 50 00"],
+  "disclaimer": "LPIN electrical trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "elec-temp-power",
+      "label": "Temporary power readiness",
+      "match": ["temp power", "temporary power", "construction power"],
+      "items": [
+        {"id": "tp1", "text": "Temp panel and GFCI protection in place"},
+        {"id": "tp2", "text": "Cord routing clear of traffic and water"},
+        {"id": "tp3", "text": "Grounding electrode / bond verified"}
+      ]
+    },
+    {
+      "id": "elec-rough",
+      "label": "Rough-in readiness",
+      "match": ["rough", "rough-in", "box and wire"],
+      "items": [
+        {"id": "er1", "text": "Boxes set and secured; nail plates where required"},
+        {"id": "er2", "text": "Cable / conduit runs complete; supports per code"},
+        {"id": "er3", "text": "Grounding continuous; bonding jumpers installed"},
+        {"id": "er4", "text": "No concealed work covering inspection points"},
+        {"id": "er5", "text": "Panel schedule and circuit identification started"}
+      ]
+    },
+    {
+      "id": "elec-service",
+      "label": "Service / panel readiness",
+      "match": ["service", "panel", "meter"],
+      "items": [
+        {"id": "es1", "text": "Service entrance conductors and equipment set"},
+        {"id": "es2", "text": "Grounding electrode system complete"},
+        {"id": "es3", "text": "Clearances and working space verified"},
+        {"id": "es4", "text": "Utility coordination complete where required"}
+      ]
+    },
+    {
+      "id": "elec-final",
+      "label": "Final / devices readiness",
+      "match": ["final", "trim", "devices"],
+      "items": [
+        {"id": "ef1", "text": "Devices and covers installed"},
+        {"id": "ef2", "text": "Panel directories and labels complete"},
+        {"id": "ef3", "text": "GFCI / AFCI protection verified"},
+        {"id": "ef4", "text": "Lighting and receptacle function checked"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-elec-rough",
+      "label": "Rough-in inspection before cover",
+      "blocksConcealment": true,
+      "inspectionMatch": ["electrical rough", "rough-in"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-elec-service",
+      "label": "Service / panel inspection",
+      "blocksConcealment": false,
+      "inspectionMatch": ["service", "panel"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-elec-final",
+      "label": "Final electrical inspection",
+      "blocksConcealment": false,
+      "inspectionMatch": ["final", "electrical final"],
+      "clearedBy": "inspector"
+    }
+  ],
+  "materials": [
+    {"name": "NM cable assortment (job-spec)", "unit": "ft", "qtyRequired": 2500, "unitCost": 0.45, "scheduleTitleIncludes": "Rough"},
+    {"name": "Metal / plastic boxes", "unit": "ea", "qtyRequired": 180, "unitCost": 1.8},
+    {"name": "Nail plates", "unit": "ea", "qtyRequired": 120, "unitCost": 0.35},
+    {"name": "GFCI receptacles", "unit": "ea", "qtyRequired": 24, "unitCost": 18},
+    {"name": "AFCI breakers (job-spec)", "unit": "ea", "qtyRequired": 18, "unitCost": 45},
+    {"name": "Panel / load center", "unit": "ea", "qtyRequired": 2, "unitCost": 280, "scheduleTitleIncludes": "Service"},
+    {"name": "Ground rods / clamps", "unit": "ea", "qtyRequired": 4, "unitCost": 22}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["carpentry", "concrete"],
+    "blocksDivisions": ["drywall", "paint", "flooring"],
+    "typicalPhase": "After framing / before insulation and drywall",
+    "notes": "Nail plates are non-negotiable. Generator backfeed is P0. Wave 1–2 spine complete."
+  },
+  "safetyPhrases": [
+    {"id": "sp-elec-energized", "priority": "P0", "phrase": "Working on or near energized equipment without proper LOTO.", "category": "safety"},
+    {"id": "sp-elec-backfeed", "priority": "P0", "phrase": "Portable generator backfeed into building wiring — stop immediately.", "category": "safety"},
+    {"id": "sp-elec-nailplate", "priority": "P0", "phrase": "Cable within 1-1/4\" of framing face without nail plate.", "category": "safety"},
+    {"id": "sp-elec-cover", "priority": "P1", "phrase": "Insulation or drywall started before rough-in clear.", "category": "inspection"},
+    {"id": "sp-elec-gfci", "priority": "P1", "phrase": "Required GFCI / AFCI protection missing or not tested.", "category": "inspection"},
+    {"id": "sp-elec-clearance", "priority": "P1", "phrase": "Working clearance at panel reduced below code minimum.", "category": "inspection"},
+    {"id": "sp-elec-mat", "priority": "P2", "phrase": "Long-lead panel or special breaker short stops sequence.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-elec-rough", "label": "Rough-in before cover", "requiredForHoldId": "hp-elec-rough", "examples": ["Box and cable", "Nail plate", "Grounding continuity", "Panel feed"]},
+    {"id": "ph-elec-service", "label": "Service equipment", "requiredForHoldId": "hp-elec-service", "examples": ["Service head", "Grounding electrode", "Working space", "Panel schedule"]},
+    {"id": "ph-elec-final", "label": "Final devices and labels", "examples": ["GFCI test", "Panel directory", "Device cover", "Lighting function"]}
+  ],
+  "readinessCriteria": [
+    "Boxes and cable secured; nail plates installed",
+    "Grounding and bonding continuous",
+    "Inspection points open and accessible",
+    "Panel clearances and labeling ready",
+    "No work covering rough-in before clear"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on an electrical job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before electrical work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
