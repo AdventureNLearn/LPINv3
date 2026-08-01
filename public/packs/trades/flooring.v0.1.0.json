@@ -1,0 +1,79 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "flooring",
+  "label": "Flooring",
+  "short": "Floor",
+  "csiPrimary": ["09"],
+  "csiRelated": ["09 60 00", "09 65 00", "09 68 00"],
+  "disclaimer": "LPIN flooring trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "fl-moisture",
+      "label": "Substrate / moisture readiness",
+      "match": ["moisture", "substrate", "slab"],
+      "items": [
+        {"id": "fm1", "text": "Moisture test results within limits"},
+        {"id": "fm2", "text": "Substrate flat and clean"},
+        {"id": "fm3", "text": "Acclimation complete where required"}
+      ]
+    },
+    {
+      "id": "fl-install",
+      "label": "Install readiness",
+      "match": ["install", "lay", "finish floor"],
+      "items": [
+        {"id": "fi1", "text": "Material on site and correct"},
+        {"id": "fi2", "text": "Transitions and thresholds planned"},
+        {"id": "fi3", "text": "Protection plan for adjacent finishes"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-fl-moisture",
+      "label": "Moisture / substrate clear before install",
+      "blocksConcealment": true,
+      "inspectionMatch": ["moisture", "substrate"],
+      "clearedBy": "either",
+      "notes": "Moisture gate is non-negotiable for most floor types."
+    }
+  ],
+  "materials": [
+    {"name": "Flooring material (job-spec)", "unit": "sf", "qtyRequired": 5000, "unitCost": 3.5},
+    {"name": "Adhesive / underlayment", "unit": "gal", "qtyRequired": 20, "unitCost": 45},
+    {"name": "Transitions / thresholds", "unit": "lf", "qtyRequired": 120, "unitCost": 8}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["concrete", "drywall", "paint"],
+    "blocksDivisions": [],
+    "typicalPhase": "Near finish, after moisture clear",
+    "notes": "Moisture gate first. Protect adjacent finishes."
+  },
+  "safetyPhrases": [
+    {"id": "sp-fl-moisture", "priority": "P0", "phrase": "Installing over substrate that fails moisture limits.", "category": "inspection"},
+    {"id": "sp-fl-protect", "priority": "P1", "phrase": "Adjacent finishes unprotected during install.", "category": "safety"},
+    {"id": "sp-fl-mat", "priority": "P2", "phrase": "Long-lead flooring short stops schedule.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-fl-moisture", "label": "Moisture / substrate condition", "requiredForHoldId": "hp-fl-moisture", "examples": ["Test reading", "Substrate surface", "Acclimation stack"]},
+    {"id": "ph-fl-install", "label": "Install progress", "examples": ["Layout", "Transition", "Finished area"]}
+  ],
+  "readinessCriteria": [
+    "Moisture results within limits",
+    "Substrate clean and flat",
+    "Material acclimated and correct",
+    "Protection for adjacent work in place"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a flooring job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before flooring work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
