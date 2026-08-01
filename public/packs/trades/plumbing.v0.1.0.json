@@ -1,0 +1,108 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "plumbing",
+  "label": "Plumbing",
+  "short": "Plumb",
+  "csiPrimary": ["22"],
+  "csiRelated": ["22 05 00", "22 10 00", "22 40 00"],
+  "disclaimer": "LPIN plumbing trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "pl-under",
+      "label": "Under-slab / underground readiness",
+      "match": ["under slab", "underground", "rough underground"],
+      "items": [
+        {"id": "pu1", "text": "Pipe layout matches drawings"},
+        {"id": "pu2", "text": "Bedding and slope correct"},
+        {"id": "pu3", "text": "Test plugs / caps in place for inspection"},
+        {"id": "pu4", "text": "Sleeves at foundation penetrations"}
+      ]
+    },
+    {
+      "id": "pl-rough",
+      "label": "Above-slab rough readiness",
+      "match": ["plumbing rough", "rough-in plumbing"],
+      "items": [
+        {"id": "pr1", "text": "Supply and DWV runs complete"},
+        {"id": "pr2", "text": "Supports and hangers installed"},
+        {"id": "pr3", "text": "Nail plates where required"},
+        {"id": "pr4", "text": "Test readiness (gauge / standpipe)"},
+        {"id": "pr5", "text": "No premature cover"}
+      ]
+    },
+    {
+      "id": "pl-final",
+      "label": "Final / trim readiness",
+      "match": ["plumbing final", "trim", "fixtures"],
+      "items": [
+        {"id": "pf1", "text": "Fixtures set and secured"},
+        {"id": "pf2", "text": "Valves accessible and labeled"},
+        {"id": "pf3", "text": "Prior rough holds cleared"},
+        {"id": "pf4", "text": "Water heater / equipment clearances"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-pl-under",
+      "label": "Underground / under-slab before pour",
+      "blocksConcealment": true,
+      "inspectionMatch": ["underground", "under slab"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-pl-rough",
+      "label": "Plumbing rough before conceal",
+      "blocksConcealment": true,
+      "inspectionMatch": ["plumbing rough"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-pl-final",
+      "label": "Plumbing final",
+      "blocksConcealment": false,
+      "inspectionMatch": ["plumbing final"],
+      "clearedBy": "inspector"
+    }
+  ],
+  "materials": [
+    {"name": "DWV pipe (job-spec)", "unit": "ft", "qtyRequired": 800, "unitCost": 2.2},
+    {"name": "Copper / PEX supply", "unit": "ft", "qtyRequired": 600, "unitCost": 1.8},
+    {"name": "Fixtures (long-lead)", "unit": "ea", "qtyRequired": 20, "unitCost": 250, "specNote": "Track long-lead separately"},
+    {"name": "Nail plates", "unit": "ea", "qtyRequired": 80, "unitCost": 0.35}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["concrete", "carpentry"],
+    "blocksDivisions": ["drywall", "flooring"],
+    "typicalPhase": "Underground before slab; rough after framing; final after finishes",
+    "notes": "UW vs slab coordination critical. Fixture long-lead tracking. Wave 2 complete."
+  },
+  "safetyPhrases": [
+    {"id": "sp-pl-pressure", "priority": "P0", "phrase": "Pressurized system work without proper isolation.", "category": "safety"},
+    {"id": "sp-pl-cover", "priority": "P1", "phrase": "Cover started over open plumbing rough or under-slab.", "category": "inspection"},
+    {"id": "sp-pl-mat", "priority": "P2", "phrase": "Fixture or specialty valve long-lead short.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-pl-under", "label": "Under-slab before pour", "requiredForHoldId": "hp-pl-under", "examples": ["Pipe layout", "Bedding", "Test setup"]},
+    {"id": "ph-pl-rough", "label": "Rough before cover", "requiredForHoldId": "hp-pl-rough", "examples": ["Nail plate", "Support", "Test gauge"]},
+    {"id": "ph-pl-final", "label": "Fixtures and valves", "examples": ["Fixture set", "Valve access", "Label"]}
+  ],
+  "readinessCriteria": [
+    "Layout matches drawings",
+    "Tests ready for inspector",
+    "Nail plates and supports complete",
+    "No cover over open inspection points"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a plumbing job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before plumbing work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
