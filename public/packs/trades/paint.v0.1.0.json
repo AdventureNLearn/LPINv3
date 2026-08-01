@@ -1,0 +1,79 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "paint",
+  "label": "Paint / finishes",
+  "short": "Paint",
+  "csiPrimary": ["09"],
+  "csiRelated": ["09 90 00"],
+  "disclaimer": "LPIN paint / finishes trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "pt-prep",
+      "label": "Surface prep readiness",
+      "match": ["prep", "surface prep", "primer"],
+      "items": [
+        {"id": "pp1", "text": "Substrate clean, dry, and sound"},
+        {"id": "pp2", "text": "Patching and sanding complete"},
+        {"id": "pp3", "text": "Primer applied where required"}
+      ]
+    },
+    {
+      "id": "pt-finish",
+      "label": "Finish coat readiness",
+      "match": ["finish coat", "paint", "topcoat"],
+      "items": [
+        {"id": "pf1", "text": "Finish coats applied per schedule"},
+        {"id": "pf2", "text": "Coverage and appearance acceptable"},
+        {"id": "pf3", "text": "Touch-up and protection complete"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-pt-prep",
+      "label": "Prep / primer clear before finish",
+      "blocksConcealment": false,
+      "inspectionMatch": ["paint prep"],
+      "clearedBy": "super",
+      "notes": "Substrate before prime."
+    }
+  ],
+  "materials": [
+    {"name": "Primer (job-spec)", "unit": "gal", "qtyRequired": 40, "unitCost": 28},
+    {"name": "Finish paint (job-spec)", "unit": "gal", "qtyRequired": 80, "unitCost": 35},
+    {"name": "Patching compound", "unit": "gal", "qtyRequired": 10, "unitCost": 18},
+    {"name": "Masking and protection materials", "unit": "ls", "qtyRequired": 1, "unitCost": 350}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["drywall", "carpentry"],
+    "blocksDivisions": [],
+    "typicalPhase": "After drywall finish and before final occupancy",
+    "notes": "Substrate before prime. Wave deltas applied."
+  },
+  "safetyPhrases": [
+    {"id": "sp-pt-substrate", "priority": "P1", "phrase": "Painting over wet, dirty, or unsound substrate.", "category": "inspection"},
+    {"id": "sp-pt-voc", "priority": "P1", "phrase": "VOC or ventilation controls missing in occupied or confined areas.", "category": "safety"}
+  ],
+  "photoSets": [
+    {"id": "ph-pt-prep", "label": "Prep condition", "examples": ["Wall surface", "Patch", "Primer"]},
+    {"id": "ph-pt-finish", "label": "Finish appearance", "examples": ["Overall wall", "Detail", "Touch-up"]}
+  ],
+  "readinessCriteria": [
+    "Substrate clean and dry",
+    "Prep and primer complete",
+    "Finish coats per schedule",
+    "Protection of adjacent work"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a paint job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before paint work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
