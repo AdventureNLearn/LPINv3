@@ -1,1 +1,20 @@
-PLACEHOLDER_FOR_FULL_CONTENT
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.2",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "carpentry",
+  "label": "Carpentry / framing",
+  "short": "Carp",
+  "csiPrimary": "06",
+  "csiRelated": ["06 10 00", "06 11 00"],
+  "disclaimer": "Trade packs are field guidance only — not AHJ forms, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [],
+  "holdPoints": [],
+  "materials": [],
+  "sequence": [],
+  "safetyPhrases": [],
+  "photoSets": [],
+  "readinessCriteria": [],
+  "interviewSlots": []
+}
