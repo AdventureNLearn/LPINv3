@@ -1,0 +1,109 @@
+{
+  "format": "lpin-trade-manifest",
+  "version": 1,
+  "generatedAt": "2026-08-01T12:46:03.000Z",
+  "packs": [
+    {
+      "division": "carpentry",
+      "packVersion": "0.1.2",
+      "label": "Carpentry / framing",
+      "path": "/packs/trades/carpentry.v0.1.0.json"
+    },
+    {
+      "division": "concrete",
+      "packVersion": "0.1.2",
+      "label": "Concrete",
+      "path": "/packs/trades/concrete.v0.1.0.json"
+    },
+    {
+      "division": "drywall",
+      "packVersion": "0.1.1",
+      "label": "Drywall / interiors",
+      "path": "/packs/trades/drywall.v0.1.0.json"
+    },
+    {
+      "division": "electrical",
+      "packVersion": "0.1.2",
+      "label": "Electrical",
+      "path": "/packs/trades/electrical.v0.1.0.json"
+    },
+    {
+      "division": "fire_protection",
+      "packVersion": "0.1.1",
+      "label": "Fire protection",
+      "path": "/packs/trades/fire_protection.v0.1.0.json"
+    },
+    {
+      "division": "flooring",
+      "packVersion": "0.1.1",
+      "label": "Flooring",
+      "path": "/packs/trades/flooring.v0.1.0.json"
+    },
+    {
+      "division": "general",
+      "packVersion": "0.1.1",
+      "label": "General / GC",
+      "path": "/packs/trades/general.v0.1.0.json"
+    },
+    {
+      "division": "glazing",
+      "packVersion": "0.1.1",
+      "label": "Glazing / curtain wall",
+      "path": "/packs/trades/glazing.v0.1.0.json"
+    },
+    {
+      "division": "materials",
+      "packVersion": "0.1.1",
+      "label": "Materials / supply",
+      "path": "/packs/trades/materials.v0.1.0.json"
+    },
+    {
+      "division": "mechanical",
+      "packVersion": "0.1.1",
+      "label": "Mechanical / HVAC",
+      "path": "/packs/trades/mechanical.v0.1.0.json"
+    },
+    {
+      "division": "other",
+      "packVersion": "0.1.1",
+      "label": "Other",
+      "path": "/packs/trades/other.v0.1.0.json"
+    },
+    {
+      "division": "paint",
+      "packVersion": "0.1.1",
+      "label": "Paint / finishes",
+      "path": "/packs/trades/paint.v0.1.0.json"
+    },
+    {
+      "division": "plumbing",
+      "packVersion": "0.1.1",
+      "label": "Plumbing",
+      "path": "/packs/trades/plumbing.v0.1.0.json"
+    },
+    {
+      "division": "roofing",
+      "packVersion": "0.1.1",
+      "label": "Roofing",
+      "path": "/packs/trades/roofing.v0.1.0.json"
+    },
+    {
+      "division": "sitework",
+      "packVersion": "0.1.1",
+      "label": "Sitework / civil",
+      "path": "/packs/trades/sitework.v0.1.0.json"
+    },
+    {
+      "division": "steel",
+      "packVersion": "0.1.1",
+      "label": "Structural steel",
+      "path": "/packs/trades/steel.v0.1.0.json"
+    },
+    {
+      "division": "waterproofing",
+      "packVersion": "0.1.1",
+      "label": "Waterproofing",
+      "path": "/packs/trades/waterproofing.v0.1.0.json"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "steel",
+  "label": "Structural steel",
+  "short": "Steel",
+  "csiPrimary": ["05"],
+  "csiRelated": ["05 12 00", "05 21 00", "05 50 00"],
+  "disclaimer": "LPIN structural steel trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "st-erect",
+      "label": "Erection readiness",
+      "match": ["erection", "steel erect", "ironwork"],
+      "items": [
+        {"id": "se1", "text": "Anchor bolts / base plates verified"},
+        {"id": "se2", "text": "Members match piece marks / drawings"},
+        {"id": "se3", "text": "Temporary bracing plan in place"},
+        {"id": "se4", "text": "Crane / lift path clear and safe"}
+      ]
+    },
+    {
+      "id": "st-bolt",
+      "label": "Bolting / connection readiness",
+      "match": ["bolting", "connections", "high strength bolt"],
+      "items": [
+        {"id": "sb1", "text": "Bolt grade and length correct"},
+        {"id": "sb2", "text": "Snug / pretension method per specs"},
+        {"id": "sb3", "text": "Inspection access maintained"},
+        {"id": "sb4", "text": "No paint under faying surfaces where prohibited"}
+      ]
+    },
+    {
+      "id": "st-deck",
+      "label": "Deck / joist readiness",
+      "match": ["metal deck", "joist", "deck"],
+      "items": [
+        {"id": "sd1", "text": "Deck type and gauge match drawings"},
+        {"id": "sd2", "text": "Attachments and side-laps complete"},
+        {"id": "sd3", "text": "Openings framed / reinforced"},
+        {"id": "sd4", "text": "Stability maintained until diaphragm complete"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-st-anchor",
+      "label": "Anchor bolt / base plate inspection",
+      "blocksConcealment": true,
+      "inspectionMatch": ["anchor bolt", "base plate"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-st-bolt",
+      "label": "High-strength bolting inspection",
+      "blocksConcealment": false,
+      "inspectionMatch": ["bolting", "connection"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-st-stability",
+      "label": "Stability / bracing before release",
+      "blocksConcealment": false,
+      "inspectionMatch": ["bracing", "stability"],
+      "clearedBy": "super",
+      "notes": "Stability first — do not remove temporary bracing without engineered release."
+    }
+  ],
+  "materials": [
+    {"name": "Structural steel members (job-spec)", "unit": "ton", "qtyRequired": 50, "unitCost": 2800},
+    {"name": "High-strength bolts assortment", "unit": "ea", "qtyRequired": 2000, "unitCost": 1.5},
+    {"name": "Metal deck", "unit": "sf", "qtyRequired": 15000, "unitCost": 2.8},
+    {"name": "Joists / bridging", "unit": "ea", "qtyRequired": 120, "unitCost": 180}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["concrete", "sitework"],
+    "blocksDivisions": ["carpentry", "mechanical", "electrical", "plumbing", "roofing"],
+    "typicalPhase": "After foundations; primary structure before envelope and MEP",
+    "notes": "Bolt grade tracking and stability first. Wave 2: stability before any trade that depends on the frame."
+  },
+  "safetyPhrases": [
+    {"id": "sp-st-fall", "priority": "P0", "phrase": "Ironworkers without fall protection at height.", "category": "safety"},
+    {"id": "sp-st-brace", "priority": "P0", "phrase": "Temporary bracing removed or incomplete in wind / before stability achieved.", "category": "safety"},
+    {"id": "sp-st-bolt", "priority": "P1", "phrase": "Wrong bolt grade or incomplete pretension on critical connections.", "category": "inspection"},
+    {"id": "sp-st-mat", "priority": "P2", "phrase": "Long-lead steel or deck short stops erection sequence.", "category": "materials"}
+  ],
+  "photoSets": [
+    {"id": "ph-st-anchor", "label": "Base plates / anchors", "requiredForHoldId": "hp-st-anchor", "examples": ["Anchor projection", "Base plate level", "Grout"]},
+    {"id": "ph-st-bolt", "label": "Connections", "requiredForHoldId": "hp-st-bolt", "examples": ["Bolt grade mark", "Connection overall", "Pretension method"]},
+    {"id": "ph-st-brace", "label": "Temporary bracing", "examples": ["Bracing layout", "Guy cables", "Stability condition"]}
+  ],
+  "readinessCriteria": [
+    "Anchor bolts accepted",
+    "Members and connections match drawings",
+    "Temporary bracing maintained until released",
+    "Bolt grade and method verified",
+    "Stability first before any dependent trade"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a structural steel job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before steel work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}

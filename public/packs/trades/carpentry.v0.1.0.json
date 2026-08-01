@@ -1,0 +1,315 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.2",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "carpentry",
+  "label": "Carpentry / framing",
+  "short": "Frame",
+  "csiPrimary": [
+    "06"
+  ],
+  "csiRelated": [
+    "06 10 00",
+    "06 16 00",
+    "06 20 00"
+  ],
+  "disclaimer": "LPIN carpentry / framing trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "fr-walls",
+      "label": "Wall framing readiness",
+      "match": [
+        "framing",
+        "wall frame",
+        "rough frame"
+      ],
+      "items": [
+        {
+          "id": "fw1",
+          "text": "Walls plumb; plates anchored per schedule"
+        },
+        {
+          "id": "fw2",
+          "text": "Hold-downs and straps installed"
+        },
+        {
+          "id": "fw3",
+          "text": "Openings framed; headers sized"
+        },
+        {
+          "id": "fw4",
+          "text": "Shear panels nailed per schedule where required"
+        },
+        {
+          "id": "fw5",
+          "text": "No concealed work covering inspection points"
+        }
+      ]
+    },
+    {
+      "id": "fr-floor",
+      "label": "Floor / joist readiness",
+      "match": [
+        "joist",
+        "floor frame",
+        "i-joist"
+      ],
+      "items": [
+        {
+          "id": "ff1",
+          "text": "Joist layout matches drawings"
+        },
+        {
+          "id": "ff2",
+          "text": "Hangers and bearing correct"
+        },
+        {
+          "id": "ff3",
+          "text": "Openings framed; point loads addressed"
+        },
+        {
+          "id": "ff4",
+          "text": "Temporary bracing where needed"
+        }
+      ]
+    },
+    {
+      "id": "fr-roof",
+      "label": "Roof framing / truss readiness",
+      "match": [
+        "truss",
+        "roof framing",
+        "rafter"
+      ],
+      "items": [
+        {
+          "id": "fr1",
+          "text": "Truss layout and bracing per engineered drawings"
+        },
+        {
+          "id": "fr2",
+          "text": "Gable and hip conditions match plans"
+        },
+        {
+          "id": "fr3",
+          "text": "Temporary bracing until sheathing/diaphragm complete"
+        },
+        {
+          "id": "fr4",
+          "text": "Point loads and hangers verified"
+        }
+      ]
+    },
+    {
+      "id": "fr-shear",
+      "label": "Shear / diaphragm readiness",
+      "match": [
+        "shear",
+        "diaphragm",
+        "shear wall"
+      ],
+      "items": [
+        {
+          "id": "fs1",
+          "text": "Panel grade and orientation correct"
+        },
+        {
+          "id": "fs2",
+          "text": "Nailing schedule followed; edge distance OK"
+        },
+        {
+          "id": "fs3",
+          "text": "Hold-downs and drag struts complete"
+        },
+        {
+          "id": "fs4",
+          "text": "Openings and collector paths clear"
+        }
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-fr-frame",
+      "label": "Framing / shear inspection before cover",
+      "blocksConcealment": true,
+      "inspectionMatch": [
+        "framing",
+        "shear",
+        "structural"
+      ],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-fr-truss",
+      "label": "Truss / roof frame before sheathing complete",
+      "blocksConcealment": false,
+      "inspectionMatch": [
+        "truss",
+        "roof framing"
+      ],
+      "clearedBy": "either",
+      "notes": "Engineered truss issues must be resolved before load."
+    }
+  ],
+  "materials": [
+    {
+      "name": "Studs 2x4/2x6 (job-spec)",
+      "unit": "ea",
+      "qtyRequired": 400,
+      "unitCost": 4.5,
+      "scheduleTitleIncludes": "Framing"
+    },
+    {
+      "name": "Structural sheathing",
+      "unit": "sheet",
+      "qtyRequired": 120,
+      "unitCost": 28,
+      "scheduleTitleIncludes": "Shear"
+    },
+    {
+      "name": "Joist hangers assortment",
+      "unit": "ea",
+      "qtyRequired": 80,
+      "unitCost": 3.5
+    },
+    {
+      "name": "Hold-down hardware kit",
+      "unit": "ea",
+      "qtyRequired": 20,
+      "unitCost": 25,
+      "scheduleTitleIncludes": "Framing"
+    },
+    {
+      "name": "Framing nails / gun nails",
+      "unit": "box",
+      "qtyRequired": 20,
+      "unitCost": 45
+    }
+  ],
+  "sequence": {
+    "dependsOnDivisions": [
+      "concrete",
+      "steel"
+    ],
+    "blocksDivisions": [
+      "roofing",
+      "mechanical",
+      "electrical",
+      "plumbing",
+      "drywall",
+      "waterproofing"
+    ],
+    "typicalPhase": "Primary structure for wood buildings; after foundations",
+    "notes": "MEP rough waits on walls/floors. Roofing waits on roof framing. Shear inspection before cover. Wave 1–2: frame clear ≠ pre-rock clear — supers keep multi-gate releases per trade. Interview waves complete for spine trade."
+  },
+  "safetyPhrases": [
+    {
+      "id": "sp-fr-fall",
+      "priority": "P0",
+      "phrase": "Open floor/roof edge without guardrails or fall protection.",
+      "category": "safety"
+    },
+    {
+      "id": "sp-fr-brace",
+      "priority": "P0",
+      "phrase": "Unbraced walls or trusses in wind — stop and brace.",
+      "category": "safety"
+    },
+    {
+      "id": "sp-fr-cover",
+      "priority": "P1",
+      "phrase": "Insulation or drywall started before framing/shear clear.",
+      "category": "inspection"
+    },
+    {
+      "id": "sp-fr-nail",
+      "priority": "P1",
+      "phrase": "Shear nailing incomplete on marked panels.",
+      "category": "inspection"
+    },
+    {
+      "id": "sp-fr-mat",
+      "priority": "P2",
+      "phrase": "Hardware or engineered lumber short stops sequence.",
+      "category": "materials"
+    }
+  ],
+  "photoSets": [
+    {
+      "id": "ph-fr-shear",
+      "label": "Shear walls before cover",
+      "requiredForHoldId": "hp-fr-frame",
+      "examples": [
+        "Nailing pattern close-up",
+        "Hold-down",
+        "Full wall elevation",
+        "Edge distance with tape in frame"
+      ]
+    },
+    {
+      "id": "ph-fr-truss",
+      "label": "Truss bracing",
+      "requiredForHoldId": "hp-fr-truss",
+      "examples": [
+        "Temporary bracing",
+        "Gable end",
+        "Hanger connection"
+      ]
+    },
+    {
+      "id": "ph-fr-opening",
+      "label": "Openings and headers",
+      "examples": [
+        "Header size mark",
+        "Window rough opening",
+        "Point load post"
+      ]
+    }
+  ],
+  "readinessCriteria": [
+    "Walls plumb; hardware and shear per drawings",
+    "Truss/joist layout matches engineered set",
+    "Inspection points open and accessible",
+    "Temporary bracing maintained until released",
+    "Next trade (MEP/roof) not covering inspection items early"
+  ],
+  "interviewSlots": [
+    {
+      "slotId": "p0_triggers",
+      "prompt": "What stops the crew immediately on a carpentry / framing job?",
+      "mapsTo": "safetyPhrases"
+    },
+    {
+      "slotId": "handoff_in",
+      "prompt": "What must prior trades hand you before carpentry / framing work starts cleanly?",
+      "mapsTo": "sequence"
+    },
+    {
+      "slotId": "handoff_out",
+      "prompt": "What must be clear before the next trade covers or depends on your work?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "hold_points",
+      "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "materials_pattern",
+      "prompt": "Which material lines most often delay your critical path?",
+      "mapsTo": "materials"
+    },
+    {
+      "slotId": "photo_proof",
+      "prompt": "What photos do you take so a remote super understands the condition?",
+      "mapsTo": "photoSets"
+    },
+    {
+      "slotId": "readiness",
+      "prompt": "When do you actually call inspection or declare ready — plain language?",
+      "mapsTo": "readinessCriteria"
+    }
+  ]
+}

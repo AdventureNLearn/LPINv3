@@ -1,0 +1,256 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "general",
+  "label": "General / GC",
+  "short": "GC",
+  "csiPrimary": [
+    "01"
+  ],
+  "csiRelated": [
+    "01 30 00",
+    "01 40 00"
+  ],
+  "disclaimer": "LPIN general / gc trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "gc-mobilize",
+      "label": "Mobilize / site setup readiness",
+      "match": [
+        "mobilize",
+        "site setup",
+        "temp facilities"
+      ],
+      "items": [
+        {
+          "id": "gm1",
+          "text": "Jobsite signage and emergency contacts posted"
+        },
+        {
+          "id": "gm2",
+          "text": "Temp power, water, toilets planned"
+        },
+        {
+          "id": "gm3",
+          "text": "SWPPP / site controls owner assigned"
+        },
+        {
+          "id": "gm4",
+          "text": "Laydown and delivery routes agreed"
+        }
+      ]
+    },
+    {
+      "id": "gc-handoff",
+      "label": "Trade handoff / pre-cover gate",
+      "match": [
+        "pre-rock",
+        "cover gate",
+        "handoff"
+      ],
+      "items": [
+        {
+          "id": "gh1",
+          "text": "Open P0/P1 items reviewed"
+        },
+        {
+          "id": "gh2",
+          "text": "Required rough inspections status known"
+        },
+        {
+          "id": "gh3",
+          "text": "Next trade notified of constraints"
+        },
+        {
+          "id": "gh4",
+          "text": "Photo documentation of concealed work staged"
+        }
+      ]
+    },
+    {
+      "id": "gc-final",
+      "label": "Final / CO path readiness",
+      "match": [
+        "final",
+        "occupancy",
+        "co",
+        "tco"
+      ],
+      "items": [
+        {
+          "id": "gc1",
+          "text": "Prior inspections passed or closed"
+        },
+        {
+          "id": "gc2",
+          "text": "Life safety devices operational"
+        },
+        {
+          "id": "gc3",
+          "text": "Punch list owners assigned"
+        },
+        {
+          "id": "gc4",
+          "text": "As-builts / O&M package staged for owner"
+        },
+        {
+          "id": "gc5",
+          "text": "Site clean enough for final walk"
+        }
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-gc-prerock",
+      "label": "Pre-cover / pre-rock super gate",
+      "blocksConcealment": true,
+      "inspectionMatch": [
+        "pre-rock",
+        "cover"
+      ],
+      "clearedBy": "super",
+      "notes": "Verbal-only release is invalid — board/written multi-trade status required."
+    },
+    {
+      "id": "hp-gc-final",
+      "label": "Final / CO readiness gate",
+      "blocksConcealment": false,
+      "inspectionMatch": [
+        "final",
+        "occupancy",
+        "co"
+      ],
+      "clearedBy": "either"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Jobsite safety / PPE stock allowance",
+      "unit": "ls",
+      "qtyRequired": 1,
+      "unitCost": 500
+    },
+    {
+      "name": "Temp barriers / signage",
+      "unit": "ls",
+      "qtyRequired": 1,
+      "unitCost": 350
+    },
+    {
+      "name": "General clean-up consumables",
+      "unit": "week",
+      "qtyRequired": 12,
+      "unitCost": 75
+    }
+  ],
+  "sequence": {
+    "dependsOnDivisions": [],
+    "blocksDivisions": [],
+    "typicalPhase": "Continuous — mobilize through closeout",
+    "notes": "GC pack is governance and gates, not specialty depth. Specialty packs attach under divisions. Wave 2: GC pack owns multi-trade gates; verbal pre-rock release is invalid — board/written only."
+  },
+  "safetyPhrases": [
+    {
+      "id": "sp-gc-p0",
+      "priority": "P0",
+      "phrase": "Open P0 on board with no owner and no stop-work decision.",
+      "category": "safety"
+    },
+    {
+      "id": "sp-gc-cover",
+      "priority": "P0",
+      "phrase": "Cover trade mobilized over uncleared rough inspections.",
+      "category": "inspection"
+    },
+    {
+      "id": "sp-gc-auth",
+      "priority": "P1",
+      "phrase": "Authority-facing status changed without a named person owning it.",
+      "category": "permit"
+    },
+    {
+      "id": "sp-gc-mat",
+      "priority": "P2",
+      "phrase": "Cross-trade material conflict blocking critical path this week.",
+      "category": "materials"
+    }
+  ],
+  "photoSets": [
+    {
+      "id": "ph-gc-site",
+      "label": "Site setup / controls",
+      "examples": [
+        "Entrance signage",
+        "Laydown",
+        "BMP overview"
+      ]
+    },
+    {
+      "id": "ph-gc-prerock",
+      "label": "Pre-rock conditions",
+      "requiredForHoldId": "hp-gc-prerock",
+      "examples": [
+        "Open wall MEP",
+        "Inspection sign-off board",
+        "Area overall"
+      ]
+    },
+    {
+      "id": "ph-gc-final",
+      "label": "Final walk conditions",
+      "requiredForHoldId": "hp-gc-final",
+      "examples": [
+        "Lobby/entry",
+        "Life safety device",
+        "Punch item"
+      ]
+    }
+  ],
+  "readinessCriteria": [
+    "Named owners on open P0/P1",
+    "Inspection status honest on the board",
+    "Pre-cover gate held until rough clears",
+    "Final path items assigned before CO call",
+    "Named owners required on every open P0 before cover trades proceed."
+  ],
+  "interviewSlots": [
+    {
+      "slotId": "p0_triggers",
+      "prompt": "What stops the crew immediately on a general / gc job?",
+      "mapsTo": "safetyPhrases"
+    },
+    {
+      "slotId": "handoff_in",
+      "prompt": "What must prior trades hand you before general / gc work starts cleanly?",
+      "mapsTo": "sequence"
+    },
+    {
+      "slotId": "handoff_out",
+      "prompt": "What must be clear before the next trade covers or depends on your work?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "hold_points",
+      "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "materials_pattern",
+      "prompt": "Which material lines most often delay your critical path?",
+      "mapsTo": "materials"
+    },
+    {
+      "slotId": "photo_proof",
+      "prompt": "What photos do you take so a remote super understands the condition?",
+      "mapsTo": "photoSets"
+    },
+    {
+      "slotId": "readiness",
+      "prompt": "When do you actually call inspection or declare ready — plain language?",
+      "mapsTo": "readinessCriteria"
+    }
+  ]
+}
