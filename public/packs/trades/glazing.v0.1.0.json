@@ -1,0 +1,87 @@
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.1",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "glazing",
+  "label": "Glazing / curtain wall",
+  "short": "Glaz",
+  "csiPrimary": ["08"],
+  "csiRelated": ["08 40 00", "08 44 00"],
+  "disclaimer": "LPIN glazing / curtain wall trade pack — field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "gl-frame",
+      "label": "Frame / curtain wall readiness",
+      "match": ["curtain wall", "storefront", "frame"],
+      "items": [
+        {"id": "gf1", "text": "Anchors and embeds set per drawings"},
+        {"id": "gf2", "text": "Frame plumb and aligned"},
+        {"id": "gf3", "text": "Weep and drainage paths clear"},
+        {"id": "gf4", "text": "IGU marks and orientation verified"}
+      ]
+    },
+    {
+      "id": "gl-seal",
+      "label": "Sealant / glass readiness",
+      "match": ["glazing", "sealant", "glass"],
+      "items": [
+        {"id": "gs1", "text": "Glass set and blocked correctly"},
+        {"id": "gs2", "text": "Sealant joints continuous and tooled"},
+        {"id": "gs3", "text": "No damage to IGU or coatings"}
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-gl-frame",
+      "label": "Frame / anchor inspection before glass",
+      "blocksConcealment": true,
+      "inspectionMatch": ["curtain wall", "storefront"],
+      "clearedBy": "inspector"
+    },
+    {
+      "id": "hp-gl-final",
+      "label": "Final glazing / weatherproofing clear",
+      "blocksConcealment": false,
+      "inspectionMatch": ["glazing final"],
+      "clearedBy": "either"
+    }
+  ],
+  "materials": [
+    {"name": "Curtain wall / storefront system", "unit": "sf", "qtyRequired": 1200, "unitCost": 45},
+    {"name": "IGU units (job-spec)", "unit": "ea", "qtyRequired": 80, "unitCost": 180},
+    {"name": "Structural silicone / sealant", "unit": "tube", "qtyRequired": 60, "unitCost": 12},
+    {"name": "Anchors / embeds", "unit": "ea", "qtyRequired": 120, "unitCost": 8}
+  ],
+  "sequence": {
+    "dependsOnDivisions": ["concrete", "steel", "carpentry"],
+    "blocksDivisions": ["interior finishes"],
+    "typicalPhase": "After structure; weatherproofing critical path",
+    "notes": "IGU mark verification. Wave deltas applied."
+  },
+  "safetyPhrases": [
+    {"id": "sp-gl-fall", "priority": "P0", "phrase": "Open edge or high glass without fall protection / staging.", "category": "safety"},
+    {"id": "sp-gl-mark", "priority": "P1", "phrase": "IGU installed without verifying marks / orientation.", "category": "inspection"},
+    {"id": "sp-gl-seal", "priority": "P1", "phrase": "Sealant joints incomplete before weather exposure.", "category": "inspection"}
+  ],
+  "photoSets": [
+    {"id": "ph-gl-anchor", "label": "Anchors and embeds", "requiredForHoldId": "hp-gl-frame", "examples": ["Anchor detail", "Embed", "Frame alignment"]},
+    {"id": "ph-gl-igu", "label": "IGU marks and glass", "examples": ["Mark close-up", "Orientation", "Edge block"]}
+  ],
+  "readinessCriteria": [
+    "Anchors and frame per drawings",
+    "IGU marks verified",
+    "Drainage and weeps clear",
+    "Sealant continuous and tooled"
+  ],
+  "interviewSlots": [
+    {"slotId": "p0_triggers", "prompt": "What stops the crew immediately on a glazing job?", "mapsTo": "safetyPhrases"},
+    {"slotId": "handoff_in", "prompt": "What must prior trades hand you before glazing work starts cleanly?", "mapsTo": "sequence"},
+    {"slotId": "handoff_out", "prompt": "What must be clear before the next trade covers or depends on your work?", "mapsTo": "holdPoints"},
+    {"slotId": "hold_points", "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?", "mapsTo": "holdPoints"},
+    {"slotId": "materials_pattern", "prompt": "Which material lines most often delay your critical path?", "mapsTo": "materials"},
+    {"slotId": "photo_proof", "prompt": "What photos do you take so a remote super understands the condition?", "mapsTo": "photoSets"},
+    {"slotId": "readiness", "prompt": "When do you actually call inspection or declare ready — plain language?", "mapsTo": "readinessCriteria"}
+  ]
+}
