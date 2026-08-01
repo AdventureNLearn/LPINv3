@@ -1,1 +1,326 @@
-PLACEHOLDER
+{
+  "format": "lpin-trade-pack",
+  "version": 1,
+  "packVersion": "0.1.2",
+  "updatedAt": "2026-08-01T12:46:03.000Z",
+  "division": "concrete",
+  "label": "Concrete",
+  "short": "Conc",
+  "csiPrimary": [
+    "03"
+  ],
+  "csiRelated": [
+    "03 30 00",
+    "03 11 00",
+    "03 20 00"
+  ],
+  "disclaimer": "LPIN concrete trade pack \u2014 field guidance only. Not an AHJ form, not a live code library, not legal advice. A person owns every status, hold clear, and inspection call. Confirm adopted edition and inspection sequence with the local building department.",
+  "checklists": [
+    {
+      "id": "conc-footing",
+      "label": "Footing / foundation readiness",
+      "match": [
+        "footing",
+        "foundation",
+        "pier"
+      ],
+      "items": [
+        {
+          "id": "cf1",
+          "text": "Approved drawings on site (stamped set)"
+        },
+        {
+          "id": "cf2",
+          "text": "Forms set to lines and grades"
+        },
+        {
+          "id": "cf3",
+          "text": "Rebar placed, tied, clearances checked"
+        },
+        {
+          "id": "cf4",
+          "text": "Soil / subgrade accepted; water managed"
+        },
+        {
+          "id": "cf5",
+          "text": "Embeds and sleeves in place"
+        },
+        {
+          "id": "cf6",
+          "text": "Area safe; access ready for inspector"
+        }
+      ]
+    },
+    {
+      "id": "conc-slab",
+      "label": "Slab-on-grade readiness",
+      "match": [
+        "slab",
+        "sog",
+        "flatwork"
+      ],
+      "items": [
+        {
+          "id": "cs1",
+          "text": "Vapor barrier continuous where required"
+        },
+        {
+          "id": "cs2",
+          "text": "Base compacted; elevation checks done"
+        },
+        {
+          "id": "cs3",
+          "text": "Rebar / mesh / fiber per drawings"
+        },
+        {
+          "id": "cs4",
+          "text": "Edge forms braced; control joint plan clear"
+        },
+        {
+          "id": "cs5",
+          "text": "Pour window weather-checked"
+        }
+      ]
+    },
+    {
+      "id": "conc-walls",
+      "label": "Wall / vertical concrete readiness",
+      "match": [
+        "wall pour",
+        "stem wall",
+        "vertical concrete"
+      ],
+      "items": [
+        {
+          "id": "cw1",
+          "text": "Forms clean, oiled, aligned, braced"
+        },
+        {
+          "id": "cw2",
+          "text": "Rebar clearances and ties verified"
+        },
+        {
+          "id": "cw3",
+          "text": "Embeds, waterstops, sleeves set"
+        },
+        {
+          "id": "cw4",
+          "text": "Pump access and pour sequence planned"
+        },
+        {
+          "id": "cw5",
+          "text": "Cure method staged"
+        }
+      ]
+    },
+    {
+      "id": "conc-postpour",
+      "label": "Post-pour / strip readiness",
+      "match": [
+        "strip",
+        "form removal",
+        "cure"
+      ],
+      "items": [
+        {
+          "id": "cp1",
+          "text": "Minimum cure / strength criteria understood before strip"
+        },
+        {
+          "id": "cp2",
+          "text": "Edges protected; no early loading without approval"
+        },
+        {
+          "id": "cp3",
+          "text": "Deficiencies marked for repair before cover"
+        },
+        {
+          "id": "cp4",
+          "text": "As-built embeds documented if critical"
+        }
+      ]
+    }
+  ],
+  "holdPoints": [
+    {
+      "id": "hp-conc-prepour",
+      "label": "Foundation / slab pre-pour inspection",
+      "blocksConcealment": true,
+      "inspectionMatch": [
+        "foundation",
+        "footing",
+        "slab",
+        "rebar"
+      ],
+      "clearedBy": "inspector",
+      "notes": "Do not pour over open inspection points."
+    },
+    {
+      "id": "hp-conc-strip",
+      "label": "Strength / cure before strip or load",
+      "blocksConcealment": false,
+      "inspectionMatch": [
+        "strip",
+        "strength"
+      ],
+      "clearedBy": "super",
+      "notes": "Human decision based on specs/tests \u2014 pack does not authorize early strip."
+    }
+  ],
+  "materials": [
+    {
+      "name": "Ready-mix concrete (or job-spec mix)",
+      "unit": "cy",
+      "qtyRequired": 50,
+      "unitCost": 160,
+      "specNote": "Confirm mix design and slump with drawings.",
+      "scheduleTitleIncludes": "Foundation"
+    },
+    {
+      "name": "Rebar (assorted, job-spec)",
+      "unit": "ton",
+      "qtyRequired": 5,
+      "unitCost": 1200,
+      "scheduleTitleIncludes": "Foundation"
+    },
+    {
+      "name": "Form panels / stakes allowance",
+      "unit": "sf",
+      "qtyRequired": 2000,
+      "unitCost": 1.5
+    },
+    {
+      "name": "Vapor barrier",
+      "unit": "sf",
+      "qtyRequired": 5000,
+      "unitCost": 0.15,
+      "scheduleTitleIncludes": "Slab"
+    },
+    {
+      "name": "Curing compound",
+      "unit": "gal",
+      "qtyRequired": 10,
+      "unitCost": 25
+    }
+  ],
+  "sequence": {
+    "dependsOnDivisions": [
+      "sitework"
+    ],
+    "blocksDivisions": [
+      "steel",
+      "carpentry",
+      "waterproofing"
+    ],
+    "typicalPhase": "Foundations and slabs after pad; before structure",
+    "notes": "Waterproofing often follows foundation walls. Framing/steel waits on strength and embeds. Wave 1\u20132: embed coordination with steel/MEP is handoff_in \u2014 latest drawings required before forms lock. Interview waves complete for spine trade."
+  },
+  "safetyPhrases": [
+    {
+      "id": "sp-conc-rebar",
+      "priority": "P0",
+      "phrase": "Impalement hazard \u2014 unprotected vertical rebar.",
+      "category": "safety"
+    },
+    {
+      "id": "sp-conc-form",
+      "priority": "P0",
+      "phrase": "Unstable formwork or kick-out risk during pour.",
+      "category": "safety"
+    },
+    {
+      "id": "sp-conc-pour-weather",
+      "priority": "P1",
+      "phrase": "Pour proceeding into freeze / washout weather without plan.",
+      "category": "weather"
+    },
+    {
+      "id": "sp-conc-cover",
+      "priority": "P1",
+      "phrase": "Pour scheduled before rebar/forms inspection clear.",
+      "category": "inspection"
+    },
+    {
+      "id": "sp-conc-mix",
+      "priority": "P2",
+      "phrase": "Mix design or truck backlog threatens pour continuity.",
+      "category": "materials"
+    }
+  ],
+  "photoSets": [
+    {
+      "id": "ph-conc-rebar",
+      "label": "Rebar before pour",
+      "requiredForHoldId": "hp-conc-prepour",
+      "examples": [
+        "Footing steel with clearance",
+        "Slab mat overview",
+        "Embed locations"
+      ]
+    },
+    {
+      "id": "ph-conc-forms",
+      "label": "Forms and grades",
+      "requiredForHoldId": "hp-conc-prepour",
+      "examples": [
+        "Form alignment",
+        "Vapor barrier lap",
+        "Sleeves in place"
+      ]
+    },
+    {
+      "id": "ph-conc-finish",
+      "label": "Finished pour / defects",
+      "examples": [
+        "Slab finish",
+        "Honeycomb mark-up",
+        "Control joints"
+      ]
+    }
+  ],
+  "readinessCriteria": [
+    "Subgrade accepted; water controlled",
+    "Forms, steel, embeds match drawings",
+    "Inspection called and clear before pour",
+    "Weather and truck logistics workable for continuous pour",
+    "Cure and strip criteria understood by crew and super",
+    "Pour plan: trucks, weather, crew, and inspection must all be real the morning of."
+  ],
+  "interviewSlots": [
+    {
+      "slotId": "p0_triggers",
+      "prompt": "What stops the crew immediately on a concrete job?",
+      "mapsTo": "safetyPhrases"
+    },
+    {
+      "slotId": "handoff_in",
+      "prompt": "What must prior trades hand you before concrete work starts cleanly?",
+      "mapsTo": "sequence"
+    },
+    {
+      "slotId": "handoff_out",
+      "prompt": "What must be clear before the next trade covers or depends on your work?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "hold_points",
+      "prompt": "Which inspections or super clears are non-negotiable before conceal or handoff?",
+      "mapsTo": "holdPoints"
+    },
+    {
+      "slotId": "materials_pattern",
+      "prompt": "Which material lines most often delay your critical path?",
+      "mapsTo": "materials"
+    },
+    {
+      "slotId": "photo_proof",
+      "prompt": "What photos do you take so a remote super understands the condition?",
+      "mapsTo": "photoSets"
+    },
+    {
+      "slotId": "readiness",
+      "prompt": "When do you actually call inspection or declare ready \u2014 plain language?",
+      "mapsTo": "readinessCriteria"
+    }
+  ]
+}
