@@ -25,10 +25,11 @@ from reportlab.platypus import (
     Flowable,
 )
 
-ROOT = Path(r"C:\AOS\products\LPINsuite_v2")
-OUT = ROOT / "docs" / "reports" / "COMM-SCALE-BENCHMARK-SCORECARD.pdf"
-RAW = ROOT / "docs" / "test-runs" / "BENCHMARK-SCORECARD-raw.json"
-MD = ROOT / "docs" / "reports" / "COMM-SCALE-BENCHMARK-SCORECARD.md"
+# Portable repo root — no host-machine inventory paths.
+REPO_ROOT = Path(__file__).resolve().parents[2]
+OUT = REPO_ROOT / "docs" / "reports" / "COMM-SCALE-BENCHMARK-SCORECARD.pdf"
+RAW = REPO_ROOT / "docs" / "test-runs" / "BENCHMARK-SCORECARD-raw.json"
+MD = REPO_ROOT / "docs" / "reports" / "COMM-SCALE-BENCHMARK-SCORECARD.md"
 
 BG = HexColor("#060e16")
 BG_CARD = HexColor("#101c2a")
