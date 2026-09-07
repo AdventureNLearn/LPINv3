@@ -7,7 +7,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
-const ROOTS = ["scripts", "src"];
+const ROOTS = ["scripts", "src", "docs"];
 const ROOT_DOCS = [
   "README.md",
   "package.json",
@@ -17,10 +17,19 @@ const ROOT_DOCS = [
 ];
 
 // Patterns that make the tree non-forkable when used as defaults.
+// These are *detector* checks (reject host inventory), not live embeds.
 const FORBIDDEN = [
   { re: /\/workspace\//, why: "hardcoded /workspace path" },
   { re: /C:\\\\AOS\\/i, why: "hardcoded C:\\AOS path" },
   { re: /C:\/AOS\//i, why: "hardcoded C:/AOS path" },
+  { re: /C:\\AOS\b/i, why: "hardcoded C:\\AOS path" },
+  { re: /OneDrive[\\/]+Desktop/i, why: "hardcoded OneDrive\\Desktop path" },
+  { re: /OneDrive.{0,24}Desktop/i, why: "hardcoded OneDrive/Desktop path" },
+  { re: /C:\\Users\\Chris\b/i, why: "hardcoded C:\\Users\\Chris path" },
+  { re: /C:\/Users\/Chris\b/i, why: "hardcoded C:/Users/Chris path" },
+  { re: /\/Users\/Chris\b/, why: "hardcoded /Users/Chris path" },
+  { re: /local-reason-bridge[\\/]+sandbox/i, why: "hardcoded local-reason-bridge\\sandbox path" },
+  { re: /USERPROFILE.{0,48}OneDrive.{0,24}Desktop/i, why: "hardcoded USERPROFILE OneDrive Desktop path" },
 ];
 
 // Default product port must not be documented as 8080 in package scripts / README
@@ -57,7 +66,7 @@ function walk(dir, out = []) {
     const p = join(dir, name);
     const st = statSync(p);
     if (st.isDirectory()) walk(p, out);
-    else if (/\.(mjs|js|ts|tsx|md|json)$/.test(name)) out.push(p);
+    else if (/\.(mjs|js|ts|tsx|md|json|py|ps1|sh|bat|cmd)$/.test(name)) out.push(p);
   }
   return out;
 }
